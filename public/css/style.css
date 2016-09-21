@@ -30,6 +30,10 @@ body
     height: 150px;
     background-color: #fff;
 }
+.slide-bloc{
+    height: 350px;
+    background-color: #ccc;
+}
 .left_bloc{
     border: 1px solid #1b6d85;
 }
@@ -63,10 +67,19 @@ body
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
+.index-pub_bloc{
+    height: 330px;
+    border: 1px solid #ccc;
+}
 .service_bloc{   
     height: 250px; 
 }
-
+.prestation{
+    margin-top: 20px;
+   height: 310px;
+   background-color: #ccc;
+   border-radius: 150px;
+}
 /*
 * code css de profile.php
 */

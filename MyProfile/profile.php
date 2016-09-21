@@ -20,19 +20,19 @@ and open the template in the editor.
             <div class="conteneur col-md-12">
                  <div class="col-md-12">
                     <div class="col-md-3 logo">
-                        <img src="../public/img/logfamily.png" width="" height="100%">
+                        <img src="../public/img/logfamily.png" class="img-responsive" height="100%">
                     </div>
                 </div>
                 <div class="col-sm-12">
                     <nav class="navbar navbar-inverse">
                         <div class="container-fluid">
                             <div class="navbar-header">
-                                <a class="navbar-brand" href="#"><font color="#1b6d85"><b>BOURAIMA</b></font><font color="red"> GROUP</font></a>
+                                <a class="navbar-brand" href="index.php?home-group"><font color="#1b6d85"><b>BOURAIMA</b></font><font color="red"> GROUP</font></a>
                             </div>
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="index.php">Home</a></li>
-                                <li><a href="#">Page 1</a></li>
-                                <li><a href="#">Prestation</a></li> 
+                                <li><a href="index.php?accueil">Accueil</a></li>
+                                <li><a href="membre.php?membre-du-group">membres du groupe</a></li>
+                                <li><a href="#">Prestations de services</a></li> 
                                 <li><a href="#">Blog</a></li> 
                                 <li><a href="#">Contact</a></li> 
                             </ul>
