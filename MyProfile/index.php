@@ -171,6 +171,12 @@ and open the template in the editor.
                         </div>
                     </div>
                 </div>
+                <div class="clearfix">&nbsp;</div>
+                <div class="row container">
+                    <div class="col-md-12 row footer-bloc">
+                        footer full
+                    </div>
+                </div>
             </div>
         </div>
 
