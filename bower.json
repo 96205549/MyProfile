@@ -1,0 +1,21 @@
+{
+  "name": "package",
+  "description": "integration des librairy",
+  "main": "bootstrap",
+  "authors": [
+    "bouraima joezer"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}

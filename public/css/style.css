@@ -1,0 +1,78 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 14 sept. 2016, 22:11:36
+    Author     : karth solution
+*/
+body
+{
+	margin: 10px  ;
+	padding: 0 ;
+	/*text-align: center ;*/
+	/*font: 0.8em "Trebuchet MS", helvetica, sans-serif ;*/
+	background: #dea;
+        background-image: url(../../public/img/authpict.jpg);
+}
+.conteneur
+{
+	/*width: 800px ;*/
+	margin:  auto ;
+	/*text-align: left ;*/
+	/*border: 2px solid #ab4 ;*/
+	background: #fff ;
+       /* height: 500px;*/
+        
+}
+.logo{
+    height: 150px;
+    background-color: #fff;
+}
+.left_bloc{
+    border: 1px solid #1b6d85;
+}
+.right_bloc{
+    /*border: 1px solid #ccc;*/
+}
+.cadre_bloc{
+    padding: 1px;
+}
+.marge{
+   /* padding:1px; */
+    margin-top: 20px;
+}
+.profil_bloc{
+    overflow: hidden;
+    height: 180px;
+    background-color: #fff;
+}
+.bar_pub{
+    background-color: #204d74;
+    color: #fff;
+    text-align: center;
+    text-transform: capitalize;
+    font-size:16px;
+    font-family: serif;
+    font-style: italic;
+}
+.pub_bloc{
+    height: 280px;
+    border: 1px solid #ccc;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.service_bloc{   
+    height: 250px; 
+}
+
+/*
+* code css de profile.php
+*/
+.profile{
+    margin-top:2px;
+    height: 250px;
+    background-color: #fff;
+    overflow: hidden;
+}
