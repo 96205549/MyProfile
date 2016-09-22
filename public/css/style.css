@@ -76,9 +76,10 @@ body
 }
 .prestation{
     margin-top: 20px;
-   height: 310px;
+    padding: 30px;
+   height: 290px;
    background-color: #ccc;
-   border-radius: 150px;
+   border-radius: 185px ;
 }
 .footer-bloc{
     width: auto;
@@ -89,6 +90,9 @@ body
     background-color: #222;
     color: #fff;
 }
+.info{
+    margin: 3px;
+}
 /*
 * code css de profile.php
 */
@@ -97,4 +101,25 @@ body
     height: 250px;
     background-color: #fff;
     overflow: hidden;
+}
+/*
+* code prestation.php
+*/
+.presta-1{
+    margin: 20px;
+}
+.presta-1-icon{
+    height: 100px;
+    background-color: #fff;
+    border: 1px solid #1b6d85;
+}
+.presta-1-description{
+    height: 100px;
+    padding: 35px;
+    background-color: #ccc;
+}
+.blog-site{
+    height: 400px;
+    background-color: #ccc;
+    margin: 10px;
 }

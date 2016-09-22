@@ -10,10 +10,14 @@ and open the template in the editor.
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../public/css/style.css" type="text/css">
+        <link rel="stylesheet" href="../public/vendor/font-awesome/css/font-awesome.min.css" type="text/css">
+        <link rel="stylesheet" href="../public/vendor/font-awesome/css/font-awesome.css.map" type="text/css">
         <link rel="stylesheet" href="../public/vendor/bootstrap/dist/css/bootstrap-theme.css" type="text/css">
         <link rel="stylesheet" href="../public/vendor/bootstrap/dist/css/bootstrap.css" type="text/css">
         <link rel="stylesheet" href="../public/vendor/bootstrap/dist/css/bootstrap.css.map" type="text/css">
         <link rel="stylesheet" href="../public/vendor/bootstrap/dist/css/bootstrap.min.css" type="text/css">
+        <link rel="stylesheet" href="../public/vendor/bootstrap/dist/css/bootstrap-theme.css" type="text/css">
+        <link rel="stylesheet" href="../public/vendor/bootstrap/dist/css/bootstrap-theme.css.map" type="text/css">
     </head>
     <body> 
         <div class="container">
@@ -24,24 +28,7 @@ and open the template in the editor.
                     </div>
                 </div>
                 <div class="col-sm-12">
-                    <nav class="navbar navbar-inverse">
-                        <div class="container-fluid">
-                            <div class="navbar-header">
-                                <a class="navbar-brand" href="index.php?home-group"><font color="#1b6d85"><b>BOURAIMA</b></font><font color="red"> GROUP</font></a>
-                            </div>
-                            <ul class="nav navbar-nav">
-                                <li><a href="index.php?accueil">Accueil</a></li>
-                                <li><a href="membre.php?membre-du-groupe">Membres du groupe</a></li>
-                                <li><a href="#">Prestations de services</a></li> 
-                                <li><a href="#">Blog</a></li> 
-                                <li><a href="#">Contact</a></li> 
-                            </ul>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-                                <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-                            </ul>
-                        </div>
-                    </nav>
+                    <?php include './menu.php'; ?>
                 </div>
                 <div class="col-md-12">
                     <div class="row col-sm-12">
@@ -114,10 +101,22 @@ and open the template in the editor.
                         <div class="col-md-offset-1 col-md-3 right_bloc">
                             <div class="row form-group pad_bloc">
                                 <div class="row bar_pub">
-                                    SERVICE
+                                   NOS SERVICES
                                 </div>
                                 <div class="row index-pub_bloc">
-
+                                    <span class=" col-md-12 info"><i class="fa fa-caret-right"></i>&nbsp; Ingénerie réseaux</span><br>
+                                    <span class=" col-md-12 info"><i class="fa fa-caret-right"></i>&nbsp; Ingénerie logiciel</span><br>
+                                    <span class=" col-md-12 info"><i class="fa fa-caret-right"></i>&nbsp; Montage des paraboles</span><br>
+                                    <span class=" col-md-12 info"><i class="fa fa-caret-right"></i>&nbsp; Montage des paneaux solaires</span><br>
+                                    <span class=" col-md-12 info"><i class="fa fa-caret-right"></i>&nbsp; Montage des caméra IP et Analogique</span><br>
+                                    <span class=" col-md-12 info"><i class="fa fa-caret-right"></i>&nbsp; Assistance maintenance informatique</span><br>
+                                    <span class=" col-md-12 info"><i class="fa fa-caret-right"></i>&nbsp; Câblage réseaux</span><br>
+                                    <span class=" col-md-12 info"><i class="fa fa-caret-right"></i>&nbsp; Formation en réseaux</span><br>
+                                    <span class=" col-md-12 info"><i class="fa fa-caret-right"></i>&nbsp; Formation en Montage parabolique</span><br>
+                                    <span class=" col-md-12 info"><i class="fa fa-caret-right"></i>&nbsp; Entretiens et Nettoyages</span><br>
+                                    <span class=" col-md-12 info"><i class="fa fa-caret-right"></i>&nbsp; Mécanique auto</span><br>
+                                    <span class=" col-md-12 info"><i class="fa fa-caret-right"></i>&nbsp; Expertise comptable</span><br>
+                                    <span class=" col-md-12 info"><i class="fa fa-caret-right"></i>&nbsp; Conseils</span><br>
                                 </div>
                             </div>
                             <div class="clearfix">&nbsp;</div>
@@ -133,7 +132,7 @@ and open the template in the editor.
 
                                 <div class="col-md-4">
                                     <div class="col-md-12 prestation">
-                                        cercle1
+                                        <!--img src="../public/img/reseaux.jpg" class="img-responsive"width="100%" height="100%"-->
                                     </div>
                                     <div class="col-md-12">
                                         <span class="col-md-12" style="margin-top: 20px;"><a href="">Ingenerie réseaux et logicielle</a></span><br>
@@ -145,7 +144,7 @@ and open the template in the editor.
                                 </div>
                                 <div class="col-md-4">
                                     <div class="col-md-12 prestation">
-                                        cercle2
+                                        <!--img src="../public/img/cam.jpg" class="img-responsive"width="100%" height="100%"-->
                                     </div>
                                     <div class="col-md-12">
                                         <span class="col-md-12" style="margin-top: 20px;"><a href="">Formation en Ingenerie réseaux et logicielle</a></span><br>
