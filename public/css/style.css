@@ -78,8 +78,10 @@ body
     margin-top: 20px;
     padding: 30px;
    height: 290px;
-   background-color: #ccc;
+   /*background-color: ;*/
+   border: 1px solid #ccc;
    border-radius: 185px ;
+   overflow: hidden
 }
 .footer-bloc{
     width: auto;
@@ -110,8 +112,10 @@ body
 }
 .presta-1-icon{
     height: 100px;
+    padding-top: 25px; 
     background-color: #fff;
     border: 1px solid #1b6d85;
+    overflow: hidden;
 }
 .presta-1-description{
     height: 100px;
@@ -119,7 +123,24 @@ body
     background-color: #ccc;
 }
 .blog-site{
-    height: 400px;
+    height: 380px;
     background-color: #ccc;
     margin: 10px;
+}
+.comment-profile{
+    padding: 15px;
+}
+.comment-bloc{
+    padding-left: 60px;
+    /*background-color: #e5e5e5;*/
+    background-color: #e5e5e5;
+}
+.comment-input{
+    padding: 30px;
+}
+.user-zone{
+    padding: 10px;
+}
+.contact{
+    padding: 30px;
 }
