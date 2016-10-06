@@ -33,7 +33,7 @@
         </div>
         <div class="form-group-sm row presta-1 ">
             <div class="col-md-6">
-                <div class="presta-1-icon col-md-4"><img src="../public/img/img-prestation/panos.png"  class="img-responsive" width="100%" height="100%"></div>
+                <div class="presta-1-icon col-md-4"><img src="../public/img/img-prestation/mecanik.png"  class="img-responsive" width="100%" height="100%"></div>
                 <div class="presta-1-description col-md-8">description</div>
             </div>
             <div class="col-md-6">
