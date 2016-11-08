@@ -4,6 +4,7 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
+<?php include './requete.php'; ?>
 <html>
     <head>
         <title>BANLIEUE-TIC</title>
@@ -20,21 +21,26 @@ and open the template in the editor.
         <link rel="stylesheet" href="../public/vendor/bootstrap/dist/css/bootstrap-theme.css" type="text/css">
         <link rel="stylesheet" href="../public/vendor/bootstrap/dist/css/bootstrap-theme.css.map" type="text/css">
     </head>
-    <body> 
+    <body class="body"> 
         <div class="container">
             <div class="conteneur col-md-12">
-                <div class="col-md-12">
-                    <div class="col-md-3 logo">
-                        <img src="../public/img/banlieue.png" class="img-responsive" width="100%" height="100%">
+                <div row container>
+                    <div class="col-md-12">
+                        <div class="col-md-3 logo">
+                            <img src="../public/img/<?= $Ets[3] ?>" class="img-responsive" width="100%" height="100%">
+                        </div>
+                        <div class="col-md-9 head-bloc">                          
+                            <img src="../public/img/img-prestation/entete.png" class="img-responsive col-md-offset-2">                    
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-12">
-                    <?php include './menu.php'; ?>
+                    <div class="col-sm-12 col-xs-12 col-md-12">
+                        <?php include './menu.php'; ?>
+                    </div>
                 </div>
                 <div class="col-md-12">
                     <div class="row col-sm-12">
                         <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                            <?= $Ets[2] ?>
                         </p>
 
                     </div>

@@ -7,35 +7,53 @@ and open the template in the editor.
     Created on : 14 sept. 2016, 22:11:36
     Author     : karth solution
 */
-body
+.body
 {
 	margin: 10px  ;
-	padding: 0 ;
+	padding: 0px ;
+        margin-top: 52px;
+        margin-bottom: 0px;
 	/*text-align: center ;*/
 	/*font: 0.8em "Trebuchet MS", helvetica, sans-serif ;*/
-	background: #dea;
-        background-image: url(../../public/img/authpict.jpg);
+	background: #e5e5e5;
+       /* background-image: url(../../public/img/authpict.jpg); #0086b3;*/
+}
+.nav-color{
+    background-color: #0086b3;
+    color: #fff;
+}
+li a{
+    color: #fff;
 }
 .conteneur
 {
 	/*width: 800px ;*/
 	margin:  auto ;
+        padding: 0px;
 	/*text-align: left ;*/
 	/*border: 2px solid #ab4 ;*/
 	background: #fff ;
+        /*background: #e5e5e5;*/
        /* height: 500px;*/
         
 }
 .logo{
     height: 150px;
+    border: solid 1px #0086b3;
     background-color: #fff;
+}
+.head-bloc{
+    /*padding-left: 100px;*/
+    height: 150px;
+    overflow: hidden;
+   /* background-color: #333333;*/
 }
 .slide-bloc{
     height: 350px;
-    background-color: #ccc;
+   /* background-color: #ccc;*/
 }
 .left_bloc{
-    border: 1px solid #1b6d85;
+    /*border: 1px solid #1b6d85;*/
 }
 .right_bloc{
     /*border: 1px solid #ccc;*/
@@ -62,14 +80,16 @@ body
     font-style: italic;
 }
 .pub_bloc{
-    height: 280px;
+    /*height: 280px;*/
+    height: auto;
     border: 1px solid #ccc;
     border-bottom-left-radius: 20px;
     border-bottom-right-radius: 20px;
 }
 .index-pub_bloc{
-    height: 330px;
-    border: 1px solid #ccc;
+    /*height: 330px;*/
+    height: auto;
+    /*border: 1px solid #ccc;*/
 }
 .service_bloc{   
     height: 250px; 
@@ -86,9 +106,9 @@ body
 .footer-bloc{
     width: auto;
     margin-top: 20px;
-    padding: 0px;
+    padding: 10px;
     margin: 0px;
-    height: 90px;
+    height: auto;
     background-color: #222;
     color: #fff;
 }
@@ -124,8 +144,8 @@ body
 }
 .blog-site{
     height: 380px;
-    background-color: #ccc;
-    margin: 10px;
+    /*background-color: #ccc;*/
+    /*margin: 10px;*/
 }
 .comment-profile{
     padding: 15px;
@@ -143,4 +163,13 @@ body
 }
 .contact{
     padding: 30px;
+}
+.info-foo{
+    float: right;
+    text-align: left;
+    color:#888888;
+    font-size: 12px;
+}
+strong{
+    color: #761c19;
 }

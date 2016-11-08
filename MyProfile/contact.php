@@ -14,13 +14,15 @@
     <div class="col-md-offset-1 col-md-3 right_bloc">
         <span class="clearfix">&nbsp;</span>
         <p>
-            <span><i class="fa fa-android text-primary"></i> &nbsp;<a href="#"><font color="#1b6d85"><b>BANLIEUE -</b></font><font color="red"> TIC </font></a> SARL </span><br>
+            <span><i class="fa fa-android text-primary"></i> &nbsp;<a href="#"><font color="#1b6d85"><b>Cruise J -</b></font><font color="#761c19"> Technologie </font></a> SARL </span><br>
             <span class="clearfix">&nbsp;</span>
             <span ><i class="fa fa-book text-primary"></i>&nbsp; banlieu-tic@gmail.com</span><br>
             <span class="clearfix">&nbsp;</span>
-            <span ><i class="fa fa-ambulance text-primary"></i>&nbsp; 06 BP 3110 Cotonou</span><br>
+            <span ><i class="fa fa-ambulance text-primary"></i>&nbsp; <?= $Ets['adresse'] ?></span><br>
             <span class="clearfix">&nbsp;</span>
-            <span ><i class="fa fa-phone-square text-primary"></i>&nbsp; +(229) 96205549 / 96122400</span><br>
+            <span ><i class="fa fa-phone-square text-primary"></i>&nbsp; <?= $Ets['contact'] ?></span><br>
+            <span class="clearfix">&nbsp;</span>
+            <span ><i class="fa fa-apple text-primary"></i>&nbsp; <?= $Ets['boitePostal'] ?></span><br>
         </p>
     </div>
 </div>

@@ -7,8 +7,21 @@ and open the template in the editor.
     Created on : 24 sept. 2016, 21:55:52
     Author     : karth solution
 */
+.connect{
+    margin: 100px  ;
+	padding: 0 ;
+	background: #dea;
+}
+.conteneur-con
+{
+	/*width: 800px ;*/
+	margin:  auto ;
+        margin-top: 100px;
+	
+        
+}
 .conteneur{
-    height: 600px;
+    height: 900px;
 }
 .main-setup{
     margin-top: 20px;
@@ -17,4 +30,8 @@ and open the template in the editor.
     padding: 3px;
     border-bottom: 1px solid #ccc;
     background-color: aliceblue;
+}
+.bloc-connexion{
+   margin-left: 300px;
+  /* background: salmon;*/
 }
