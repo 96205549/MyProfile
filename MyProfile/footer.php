@@ -49,5 +49,5 @@
 </body>
 <script src="../public/vendor/jquery/dist/jquery.min.js"></script>
 <script src="../public/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-<script src="../public/js/postmsg.js"></script>
+<!--script src="../public/js/postmsg.js"></script-->
 </html>

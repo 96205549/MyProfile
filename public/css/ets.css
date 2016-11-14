@@ -10,7 +10,8 @@ and open the template in the editor.
 .connect{
     margin: 100px  ;
 	padding: 0 ;
-	background: #dea;
+	/*background: #dea;*/
+	background: slategray;
 }
 .conteneur-con
 {

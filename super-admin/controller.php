@@ -30,23 +30,20 @@ if (isset($_POST['submitInfo'])) {
         }
         //die(print_r($file_name));
 
-        /* $inside = $db->prepare("UPDATE `ets` SET `nomEts`=:nom,`slogan`=:slogan,`logo`=:logo,`adresse`=:adr,`contact`=:cont,`boitePostal`=:bp,`date`=:date WHERE `id`=:id");
-          $inside->execute(array(
-          'nom'=>$nomets,
-          'slogan'=>$slogan,
-          'logo'=>$file_name,
-          'adr'=>$addr,
-          'cont'=>$cont,
-          'bp'=>$bp,
-          'date'=>$date,
-          'id'=>$id
-          )
-          ); */
-        //die(print_r($inside));
-        $inside = $db->query("UPDATE `ets` SET `nomEts`='$nomets',`slogan`='$slogan',`logo`='$file_name',`adresse`='$addr',`contact`='$cont',`boitePostal`='$bp',`date`='$date' WHERE `id`=$id");
-        //die(print_r($inside));
+        $inside = $db->prepare("UPDATE ets SET nomEts=:nom, slogan=:slogan, logo=:logo, adresse=:adr, contact=:cont, boitePostal=:bp, date=:date WHERE id=:id");
+        $inside->execute(array(
+            'nom' => $nomets,
+            'slogan' => $slogan,
+            'logo' => $file_name,
+            'adr' => $addr,
+            'cont' => $cont,
+            'bp' => $bp,
+            'date' => $date,
+            'id' => $id
+            )
+        );
 
-        print_r($inside);
+        //  $inside = $db->query("UPDATE `ets` SET `nomEts`='$nomets',`slogan`='$slogan',`logo`='$file_name',`adresse`='$addr',`contact`='$cont',`boitePostal`='$bp',`date`='$date' WHERE `id`=$id");      
         if ($inside == true) {
             echo "oui enregistrement effectuer avec succès";
             header('Location: admin.php?tab=info');
@@ -97,7 +94,14 @@ if (isset($_POST['postcv'])) {
             $file_name = "cv";
         }
         if (sizeof($data) > 0) {
-            $inside = $db->query("UPDATE `cv` SET `cv_texte`='$cvT',`cv_jointe`='$file_name',`date`='$date' WHERE `id_users`='$id'");
+            $inside = $db->prepare('UPDATE cv SET cv_texte=:cvt, cv_jointe=:cvj, date=:date WHERE id_users=:id');
+            $inside->execute(array(
+                'cvt' => $cvT,
+                'cvj' => $file_name,
+                'date' => $date,
+                'id' => $id));
+
+            //$inside = $db->query("UPDATE `cv` SET `cv_texte`='$cvT',`cv_jointe`='$file_name',`date`='$date' WHERE `id_users`='$id'");
         } else {
             $inside = $db->query("INSERT INTO `cv`(`cv_texte`,`cv_jointe`,`id_users`,`date`) VALUES ('$cvT','$file_name','$id','$date')");
         }
@@ -189,10 +193,10 @@ if (isset($_POST['submitProfil'])) {
     $passa = $_POST['newpass'];
     $passb = $_POST['confirm'];
     $date = time();
-    if(empty($passa) || empty($passb)){
-        $pass= $user['pass'];
+    if (empty($passa) || empty($passb)) {
+        $pass = $user['pass'];
     }
-    if (($passlast ==$user['pass']) && ($passa== $passb)) {
+    if (($passlast == $user['pass']) && ($passa == $passb)) {
         $pass == sha1($passa);
     }
     //die(print_r($pass));
@@ -206,24 +210,25 @@ if (isset($_POST['submitProfil'])) {
             $file_name = $user['profile'];
         }
 
-        //die(print_r($user['pass']));
-//        if ((!empty($passa) && !empty($passb) && !empty($passlast) ) && sha1($passlast) == $user['pass']) {
-//            if ($passa == $passb) {
-               // $pass = sha1($passa);
-                $inside = $db->query("UPDATE `users` SET `nom`='$nom',`profession`='$profession',`email`='$email',`contact`='$cont',`login`='$login',`pass`='$pass',`profile`='$file_name',`type-user`='0',`date`='$date' WHERE `id`= '$id'");
-//            }
-//        } else {
-            header('Location: admin.php?tab=profil');
-       // }
-//        if (empty($passa)&& empty($passb) && empty($passlast)&& empty($file_name)) {
-//            if ($passa == $passb) {
-//                $pass = $user['pass'];
-//                $file=$user['profile'];
-//                $inside = $db->query("UPDATE `users` SET `nom`='$nom',`profession`='$profession',`email`='$email',`contact`='$cont',`login`='$login',`pass`='$pass',`profile`='$file',`type-user`='0',`date`='$date' WHERE `id`= '$iduser'");
-//            }
-//        }
-        //die(print_r($inside));
-        //print_r($inside);
+        
+        
+       /* $inside = $db->prepare('UPDATE users SET nom=:nom, profession=:profession, email=:mail, contact=:contact, login=:login, pass=:pass, profile=:profile, type-user=:user_type, date=:date WHERE id=:id');
+            $inside->execute(array(
+                'nom' => $nom,
+                'profession' => $profession,
+                'mail' => $email,
+                'contact' => $cont,
+                'login' => $login,
+                'pass' => $pass,
+                'profile' => $file_name,
+                'user_type' => '0',
+                'date' => $date,
+                'id' => $id));*/
+        
+        $inside = $db->query("UPDATE `users` SET `nom`='$nom',`profession`='$profession',`email`='$email',`contact`='$cont',`login`='$login',`pass`='$pass',`profile`='$file_name',`type-user`='0',`date`='$date' WHERE `id`= '$id'");
+
+        header('Location: admin.php?tab=profil');
+     
         if ($inside == true) {
             echo "oui enregistrement effectuer avec succès";
             header('Location: admin.php?tab=profil');

@@ -16,15 +16,15 @@ if (isset($_POST['msg'])) {
     if (!empty($text)) {
         //die(print_r($idpost.",".$date.",".$text));
         $req = $db->query("INSERT INTO `messages`(`msg`, `date`, `id_post`, `idclient`, `parent`) VALUES ('$text','$date','$idpost','0','0')");
-
+       // die(print_r($req));
         if ($req == TRUE) {
             $output["msg"] = "merci pour votre commentaire";
             $output["success"] = true;
             $_SESSION['idp'] = $idpost;
-            //header('Location: blog.php?notre-blog');
+            header('Location: blog.php?notre-blog');
         }
     }
-            return json_encode($output);
+          //  return json_encode($output);
 }
 
 //function countMsg($idpost)

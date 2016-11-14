@@ -16,13 +16,13 @@ and open the template in the editor.
 	/*text-align: center ;*/
 	/*font: 0.8em "Trebuchet MS", helvetica, sans-serif ;*/
 	background: #e5e5e5;
-       /* background-image: url(../../public/img/authpict.jpg); #0086b3;*/
+       /* background-image: url(../../public/img/authpict.jpg); #204d74 #0086b3; #888888 #5bc0de*/
 }
 .nav-color{
-    background-color: #0086b3;
+    background-color: slategray;
     color: #fff;
 }
-li a{
+.nav-color-li a{
     color: #fff;
 }
 .conteneur
@@ -71,13 +71,16 @@ li a{
     background-color: #fff;
 }
 .bar_pub{
-    background-color: #204d74;
+    /*background-color: #204d74;*/
+    /*background-color: #761c19;*/
+    background-color: slategray;
     color: #fff;
     text-align: center;
     text-transform: capitalize;
     font-size:16px;
     font-family: serif;
     font-style: italic;
+    border-radius: 5px;
 }
 .pub_bloc{
     /*height: 280px;*/
@@ -140,7 +143,10 @@ li a{
 .presta-1-description{
     height: 100px;
     padding: 35px;
-    background-color: #ccc;
+    /*background-color: #ccc;*/
+    color: yellowgreen;
+    font-family:  inherit;
+    /*font-style: bold;*/
 }
 .blog-site{
     height: 380px;
