@@ -6,21 +6,31 @@
             <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 380px; overflow: hidden">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
+                    <li data-target="#myCarousel" data-slide-to="0" class="<?= (sizeof($slid[0])> 0) ? "active" : " " ?>"></li>
                     <?php foreach ($slides as $slide) { ?>
-                        <li data-target="#myCarousel" data-slide-to="0" class="<?= ($slide[0] == "1") ? "active" : " " ?>"></li>
+                        <li data-target="#myCarousel" data-slide-to="0" class=""></li>
                     <?php } ?>
                 </ol>
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner" role="listbox">
-                    <?php foreach ($slides as $slide) { ?>
-                        <div class="item <?= ($slide[0] == "1") ? "active" : " " ?>">
+                    <div class="item active">
+                        <img src="../public/img/<?= $slid[1] ?>" alt="<?= $slid[1] ?>" width="100%" height="100%">
+                        <div class="carousel-caption">
+                            <h3>Chania</h3>
+                            <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
+                        </div>
+                    </div>
+                    <?php foreach ($slides as $slide) { 
+                        if($slide[0]!= $slid[0]):
+                        ?>
+                        <div class="item <?php // ($slide[0] == "1") ? "active" : " " ?>">
                             <img src="../public/img/<?= $slide[1] ?>" alt="<?= $slide[1] ?>" width="100%" height="100%">
                             <div class="carousel-caption">
                                 <h3>Chania</h3>
                                 <p>The atmosphere in Chania has a touch of Florence and Venice.</p>
                             </div>
                         </div>
-                    <?php } ?>                  
+                    <?php endif; } ?>                  
                 </div>
 
                 <!-- Left and right controls -->
@@ -42,10 +52,11 @@
                 NOS SERVICES
             </div>
             <div class="row index-pub_bloc">
-                <?php //foreach ($services as $service) {     
-                ?>
+    <?php //foreach ($services as $service) {     
+
+    ?>
                 <span class=" col-md-12 info"><i class="fa fa-caret-right"></i>&nbsp; <?php // $service['1']; ?></span><br>
-                <?php //} ?>
+<?php //}  ?>
                
             </div>
         </div>

@@ -1,6 +1,6 @@
 <html>
     <head>
-        <title>BANLIEUE-TIC</title>
+        <title>Toutes-Installations</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" href="../public/img/img-prestation/reseaux.png" />
@@ -19,19 +19,19 @@
                     <?php //include './menu.php'; ?>
                 </div-->
                 <form method="post" action="auth.php">
-                <div class="col-md-4 bloc-connexion">
+                <div class="col-md-offset-3 col-md-4 ">
                     <table class="table-responsive col-md-12">
                         <tr>
-                            <td>Login:</td>
-                            <td><input type="text" name="login" class="form-control"></td>
+                            <td><!--font color="#fff">Login:</font--></td>
+                            <td><input type="text" name="login" placeholder="login" class="form-control" style=" height:45px; border-bottom-width:3px;  border-bottom-color: #CCC;"></td>
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
                             <td>&nbsp;</td>
                         </tr>
                         <tr>
-                            <td>Password:</td>
-                            <td><input type="password" name="password" class="form-control"></td>
+                            <td><!--font color="#fff"><b>Password:</b></font--></td>
+                            <td><input type="password" name="password" placeholder="password" class="form-control" style=" height:45px; border-bottom-width:3px;  border-bottom-color: #CCC;"></td>
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
@@ -39,7 +39,7 @@
                         </tr>
                         <tr>
                             <td>&nbsp;</td>
-                            <td><button type="submit"name="conn" class="btn btn-default">connecter</button></td>
+                            <td><button type="submit" name="conn" class="btn btn-info form-control" style=" height:45px;"><b>connecter</b></button></td>
                         </tr>
                     </table>
                 </div>

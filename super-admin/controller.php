@@ -28,7 +28,6 @@ if (isset($_POST['submitInfo'])) {
         } else { //Sinon (la fonction renvoie FALSE).
             $file_name = $ets['logo'];
         }
-        //die(print_r($file_name));
 
         $inside = $db->prepare("UPDATE ets SET nomEts=:nom, slogan=:slogan, logo=:logo, adresse=:adr, contact=:cont, boitePostal=:bp, date=:date WHERE id=:id");
         $inside->execute(array(
@@ -39,11 +38,13 @@ if (isset($_POST['submitInfo'])) {
             'cont' => $cont,
             'bp' => $bp,
             'date' => $date,
-            'id' => $id
+            'id' => 1
             )
         );
 
-        //  $inside = $db->query("UPDATE `ets` SET `nomEts`='$nomets',`slogan`='$slogan',`logo`='$file_name',`adresse`='$addr',`contact`='$cont',`boitePostal`='$bp',`date`='$date' WHERE `id`=$id");      
+        // $inside = $db->query("UPDATE `ets` SET `nomEts`='$nomets',`slogan`='$slogan',`logo`='$file_name',`adresse`='$addr',`contact`='$cont',`boitePostal`='$bp',`date`='$date' WHERE `id`=$id");      
+        //die(print_r($inside));
+
         if ($inside == true) {
             echo "oui enregistrement effectuer avec succès";
             header('Location: admin.php?tab=info');
@@ -193,11 +194,18 @@ if (isset($_POST['submitProfil'])) {
     $passa = $_POST['newpass'];
     $passb = $_POST['confirm'];
     $date = time();
-    if (empty($passa) || empty($passb)) {
-        $pass = $user['pass'];
-    }
-    if (($passlast == $user['pass']) && ($passa == $passb)) {
-        $pass == sha1($passa);
+    if (empty($passlast)) {
+        if ((sha1($passlast) == $user['pass']) && (($passa == $passb))) {
+            $pass = sha1($passa);
+        } else {
+            $pass = $user['pass'];
+        }
+    } else {
+        if ((sha1($passlast) == $user['pass']) && ($passa == $passb)) {
+            $pass = sha1($passa);
+        } else {
+            $pass = $user['pass'];
+        }
     }
     //die(print_r($pass));
 
@@ -210,30 +218,52 @@ if (isset($_POST['submitProfil'])) {
             $file_name = $user['profile'];
         }
 
-        
-        
-       /* $inside = $db->prepare('UPDATE users SET nom=:nom, profession=:profession, email=:mail, contact=:contact, login=:login, pass=:pass, profile=:profile, type-user=:user_type, date=:date WHERE id=:id');
-            $inside->execute(array(
-                'nom' => $nom,
-                'profession' => $profession,
-                'mail' => $email,
-                'contact' => $cont,
-                'login' => $login,
-                'pass' => $pass,
-                'profile' => $file_name,
-                'user_type' => '0',
-                'date' => $date,
-                'id' => $id));*/
-        
+
+
+        /* $inside = $db->prepare('UPDATE users SET nom=:nom, profession=:profession, email=:mail, contact=:contact, login=:login, pass=:pass, profile=:profile, type-user=:user_type, date=:date WHERE id=:id');
+          $inside->execute(array(
+          'nom' => $nom,
+          'profession' => $profession,
+          'mail' => $email,
+          'contact' => $cont,
+          'login' => $login,
+          'pass' => $pass,
+          'profile' => $file_name,
+          'user_type' => '0',
+          'date' => $date,
+          'id' => $id)); */
+
         $inside = $db->query("UPDATE `users` SET `nom`='$nom',`profession`='$profession',`email`='$email',`contact`='$cont',`login`='$login',`pass`='$pass',`profile`='$file_name',`type-user`='0',`date`='$date' WHERE `id`= '$id'");
 
         header('Location: admin.php?tab=profil');
-     
+
         if ($inside == true) {
             echo "oui enregistrement effectuer avec succès";
             header('Location: admin.php?tab=profil');
         } else {
             echo "echec d'enregistrement";
+        }
+    }
+}
+
+if (isset($_GET['code'])) {
+    $code = $_GET['code'];
+    $id = explode("/", $code)[1];
+    $syst = explode("/", $code)[0];
+    //echo $id."---".$syst;
+    if ($syst == "slide") {
+        $inside = $db->query("delete from slide where id='$id'");
+        if ($inside) {
+            header('Location: admin.php?tab=slide');
+        } else {
+            echo "echec de suppression";
+        }
+    } elseif ($syst == "prest") {
+        $inside = $db->query("delete from offres where id='$id'");
+        if ($inside) {
+            header('Location: admin.php?tab=prest');
+        } else {
+            echo "echec de suppression";
         }
     }
 }

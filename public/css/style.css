@@ -9,14 +9,16 @@ and open the template in the editor.
 */
 .body
 {
-	margin: 10px  ;
-	padding: 0px ;
-        margin-top: 52px;
-        margin-bottom: 0px;
-	/*text-align: center ;*/
-	/*font: 0.8em "Trebuchet MS", helvetica, sans-serif ;*/
-	background: #e5e5e5;
-       /* background-image: url(../../public/img/authpict.jpg); #204d74 #0086b3; #888888 #5bc0de*/
+    margin: 10px  ;
+    padding: 0px ;
+    margin-top: 52px;
+    margin-bottom: 0px;
+    font-family: 'Open Sans', 'Trebuchet MS', arial, sans-serif;
+    font-size: 13px;
+    /*text-align: center ;*/
+    /*font: 0.8em "Trebuchet MS", helvetica, sans-serif ;*/
+    background: #e5e5e5;
+    /* background-image: url(../../public/img/authpict.jpg); #204d74 #0086b3; #888888 #5bc0de*/
 }
 .nav-color{
     background-color: slategray;
@@ -27,15 +29,15 @@ and open the template in the editor.
 }
 .conteneur
 {
-	/*width: 800px ;*/
-	margin:  auto ;
-        padding: 0px;
-	/*text-align: left ;*/
-	/*border: 2px solid #ab4 ;*/
-	background: #fff ;
-        /*background: #e5e5e5;*/
-       /* height: 500px;*/
-        
+    /*width: 800px ;*/
+    margin:  auto ;
+    padding: 0px;
+    /*text-align: left ;*/
+    /*border: 2px solid #ab4 ;*/
+    background: #fff ;
+    /*background: #e5e5e5;*/
+    /* height: 500px;*/
+
 }
 .logo{
     height: 150px;
@@ -46,11 +48,11 @@ and open the template in the editor.
     /*padding-left: 100px;*/
     height: 150px;
     overflow: hidden;
-   /* background-color: #333333;*/
+    /* background-color: #333333;*/
 }
 .slide-bloc{
     height: 350px;
-   /* background-color: #ccc;*/
+    /* background-color: #ccc;*/
 }
 .left_bloc{
     /*border: 1px solid #1b6d85;*/
@@ -62,7 +64,7 @@ and open the template in the editor.
     padding: 1px;
 }
 .marge{
-   /* padding:1px; */
+    /* padding:1px; */
     margin-top: 20px;
 }
 .profil_bloc{
@@ -100,11 +102,11 @@ and open the template in the editor.
 .prestation{
     margin-top: 20px;
     padding: 30px;
-   height: 290px;
-   /*background-color: ;*/
-   border: 1px solid #ccc;
-   border-radius: 185px ;
-   overflow: hidden
+    height: 290px;
+    /*background-color: ;*/
+    border: 1px solid #ccc;
+    border-radius: 185px ;
+    overflow: hidden
 }
 .footer-bloc{
     width: auto;
@@ -178,4 +180,8 @@ and open the template in the editor.
 }
 strong{
     color: #761c19;
+}
+
+p {
+    line-height: 1.7em;
 }

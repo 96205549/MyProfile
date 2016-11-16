@@ -7,6 +7,7 @@
 include '../super-admin/conn.db';
 //session_start();
 $idpost= 1;
+$sli1 = 'SELECT * FROM slide order by id desc limit 1';
 $slide = $db->query("select * from slide");
 $service = $db->query("select * from offres");
 $post = $db->query("select * from post");
@@ -18,6 +19,7 @@ $msgs = $postMsg->fetchAll();
 $Cv = $cv->fetchAll();
 $Ets = $ets->fetch();
 
+$slid = $db->query($sli1)->fetch();
 $slides = $slide->fetchAll();
 $services = $service->fetchAll();
 $posts = $post->fetchAll();

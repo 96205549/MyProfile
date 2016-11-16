@@ -22,7 +22,7 @@ if ($index == "admin.php") {
 ?>
 <html>
     <head>
-        <title>BANLIEUE-TIC</title>
+        <title>Toutes-Installations</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" href="../public/img/img-prestation/reseaux.png" />
@@ -169,23 +169,19 @@ if ($index == "admin.php") {
                                         <div class="col-md-12">
                                             <table class=" col-md-12 table-responsive table-striped table-hover table-bordered" style="margin-top: 20px;">
                                                 <tr style="height: 30px;" class="table-responsive">
-                                                    <td>N°:</td>
-                                                    <td>Nom Prestation</td>
-                                                    <td>Action</td>
+                                                    <td align='center'><b>N°:</b></td>
+                                                    <td > <b>Nom Prestation</b></td>
+                                                    <td align='center'><b>Action</b></td>
 
                                                 </tr>
                                                 <?php foreach ($data2 as $value): ?>
                                                     <tr style="height: 40px;">
-                                                        <td><?= $value[0]; ?></td>
+                                                        <td align='center'><?= $value[0]; ?></td>
                                                         <td><?= $value[1]; ?></td>
-                                                        <td><a href="#"><i class="fa fa-pencil text-warning text-center"></i></a>&nbsp;<a href="#"><i class="fa fa-remove text-danger"></i></a></td>
+                                                        <td align='center'><!--a href="#"><i class="fa fa-pencil text-warning text-center"></i></a>&nbsp;--><a href="controller.php?code=prest/<?= $value[0] ?>"><i class="fa fa-remove text-danger"></i></a></td>
                                                     </tr>
                                                 <?php endforeach; ?>
-                                                <!--tr style="height: 40px;">
-                                                    <td>2</td>
-                                                    <td>Ingenerie réseaux</td>
-                                                    <td><a href="#"><i class="fa fa-pencil text-warning text-center"></i></a>&nbsp;<a href="#"><i class="fa fa-remove text-danger"></i></a></td>
-                                                </tr-->
+                                               
                                                 <tbody>
 
                                                 </tbody>
@@ -309,11 +305,11 @@ if ($index == "admin.php") {
                                             <table class=" col-md-12 table-responsive table-striped table-hover table-bordered" style="margin-top: 20px;">
                                                 <tr style="height: 30px;" class="table-responsive">
                                                     <td></td>
-                                                    <td>Nom de l'image</td>
-                                                    <td>Chemin</td>
-                                                    <td>Taille</td>
-                                                    <td>Modifier</td>
-                                                    <td>Supprimer</td>
+                                                    <td><b>Nom de l'image</b></td>
+                                                    <td><b>Chemin</b></td>
+                                                    <td><b>Taille</b></td>
+                                                    <!--td>Modifier</td-->
+                                                    <td><b>Supprimer</b></td>
                                                 </tr>
                                                 <?php foreach ($slides as $slide) {
 
@@ -323,8 +319,8 @@ if ($index == "admin.php") {
                                                         <td><?= $slide[1] ?></td>
                                                         <td><?= $slide[2] ?></td>
                                                         <td>198 k0</td>
-                                                        <td align='center'><a href="#"><i class="fa fa-pencil text-warning text-center"></i></a></td>
-                                                        <td align='center'><a href="#"><i class="fa fa-remove text-danger"></i></a></td>
+                                                        <!--td align='center'><a href="#"><i class="fa fa-pencil text-warning text-center"></i></a></td-->
+                                                        <td align='center'><a href="controller.php?code=slide/<?= $slide[0] ?>"><i class="fa fa-remove text-danger"></i></a></td>
                                                     </tr>
                                                 <?php } ?>
 

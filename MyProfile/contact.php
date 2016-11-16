@@ -1,4 +1,14 @@
-<?php include './header.php'; ?>
+<?php
+include './header.php';
+//session_start();
+//$_SESSION['message']=" ";
+?>
+
+<div class="col-md-12">
+    <?php //if (sizeof($_SESSION['message']) > 0): ?>
+        <div><p><?php // $_SESSION['message'];  ?></p></div>
+<?php// endif; ?>
+</div>
 <div class="row col-sm-12">
     <div class="col-md-8 left_bloc">
         <form method="post">
@@ -39,11 +49,11 @@ if (isset($_POST['submit'])) {
 
     $reg = $db->query("INSERT INTO `contact`(`pseudo`, `email`, `message`, `date`) VALUES ('$pseud','$email','$msg','$date')");
     //die(print_r($reg));
-    /*if ($reg) {
-        echo 'message envoyer avec succès';
+    if ($reg) {
+        $_SESSION['message'] = 'message envoyer avec succès';
     } else {
-        echo "message échouer";
-    }*/
+        $_SESSION['message'] = "message échouer";
+    }
 }
 
 ?>

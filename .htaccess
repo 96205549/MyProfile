@@ -1,0 +1,13 @@
+#/.htaccess
+#AddDefaultCharset UTF-8
+#exclusion d'affichage des fichiers .ini
+#<Files *.ini>  
+ #   Order deny,allow
+  #  Deny from all
+#</Files>
+#redirection des requetes vers le fichier MyProfile/index.php
+#<IfModule mod_rewrite.c>
+  #  RewriteEngine on
+   # RewriteRule  ^$ MyProfile/    [L]
+   # RewriteRule  (.*) MyProfile/$1 [L]
+#</IfModule>

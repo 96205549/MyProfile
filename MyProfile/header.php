@@ -7,10 +7,11 @@ and open the template in the editor.
 <?php include './requete.php'; ?>
 <html>
     <head>
-        <title>BANLIEUE-TIC</title>
+        <title>Toutes-Installations</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" href="../public/img/img-prestation/reseaux.png" />
+        <link rel="stylesheet" href="../public/popup/css/mvpready-admin.css">
         <link rel="stylesheet" href="../public/css/style.css" type="text/css">
         <link rel="stylesheet" href="../public/vendor/font-awesome/css/font-awesome.min.css" type="text/css">
         <link rel="stylesheet" href="../public/vendor/font-awesome/css/font-awesome.css.map" type="text/css">
@@ -20,6 +21,9 @@ and open the template in the editor.
         <link rel="stylesheet" href="../public/vendor/bootstrap/dist/css/bootstrap.min.css" type="text/css">
         <link rel="stylesheet" href="../public/vendor/bootstrap/dist/css/bootstrap-theme.css" type="text/css">
         <link rel="stylesheet" href="../public/vendor/bootstrap/dist/css/bootstrap-theme.css.map" type="text/css">
+        
+        
+        
     </head>
     <body class="body"> 
         <div class="container">

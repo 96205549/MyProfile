@@ -49,5 +49,11 @@
 </body>
 <script src="../public/vendor/jquery/dist/jquery.min.js"></script>
 <script src="../public/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-<!--script src="../public/js/postmsg.js"></script-->
+<!--script src="../public/js/postmsg.js"></script-->         
+            <script type="text/javascript" src="../public/popup/js/jquery.slimscroll.min.js"></script>          
+            <script type="text/javascript" src="../public/popup/js/jquery.magnific-popup.min.js"></script>
+            <script type="text/javascript" src="../public/popup/js/mvpready-core.js"></script>
+            <script type="text/javascript" src="../public/popup/js/mvpready-helpers.js"></script>
+            <script type="text/javascript" src="../public/popup/js/mvpready-admin.js"></script>
+           
 </html>
