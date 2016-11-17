@@ -3,7 +3,7 @@ include './header.php';
 include '../super-admin/conn.db';
 $url = $_SERVER['REQUEST_URI'];
 $tabl = explode('/', $url);
-$id =$tabl[4];
+$id =$tabl[3];
 $cv= "select * from cv where id_users='$id'";
 $valus= "SELECT * FROM `users` where id='$id' ";
 $data= $db->query($cv)->fetch();

@@ -7,7 +7,7 @@ include './admin_requete.php';
 //die(print_r($_SESSION['user']));
 $url = $_SERVER['REQUEST_URI'];
 $tabl = explode('/', $url);
-$index = $tabl[3];
+$index = $tabl[2];
 if ($index == "admin.php") {
     $tab = "info";
 } else {
