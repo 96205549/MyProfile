@@ -2,7 +2,7 @@
 <div class="clearfix">&nbsp;</div>
 <div class="row col-md-12 col-xs-12">
     <div class="col-xs-12 col-md-12 col-sm-12 transit">
-        <span class="service"><b>SERVICE VENTE DE VEHICULE D'OCCASION</b></span>
+        <span class="service"><b>SERVICE TRANSIT</b></span>
         <div class="col-md-12 promotion-vehicule">
             Promotion des v&eacute;hicules d&apos;occasion 
         </div>
@@ -201,7 +201,7 @@
 </body>
 <script src="../public/vendor/jquery/dist/jquery.min.js"></script>
 <script src="../public/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
-<!--script src="../public/js/postmsg.js"></script-->         
+<!--script src="../public/js/postmsg.js"></script-->                
 <script type="text/javascript" src="../public/popup/js/jquery.slimscroll.min.js"></script>          
 <script type="text/javascript" src="../public/popup/js/jquery.magnific-popup.min.js"></script>
 <script type="text/javascript" src="../public/popup/js/mvpready-core.js"></script>

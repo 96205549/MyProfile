@@ -49,7 +49,7 @@ if ($index == "admin.php") {
                     <div class="layout layout-main-right layout-stack-sm">
                         <div class="col-md-3 col-sm-4 layout-sidebar">
                             <div class="nav-layout-sidebar-skip">
-                                <strong>Tab Navigation</strong> / <a href="#settings-content">Skip to Content</a>	
+                                <strong>Tab Navigation</strong> / <a href="prod-add.php">Skip to Content</a>	
                             </div>
                             <div class="clearfix">&nbsp;</div>
                             <div class="main-setup">

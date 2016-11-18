@@ -52,4 +52,5 @@
     <script src="../public/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
     <script src="../public/vendor/ckeditor/ckeditor.js"></script>
     <script src="../public/js/fileinput.js"></script>
+    <script src="../public/js/add-dynamic.js"></script> 
 </html>

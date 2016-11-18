@@ -8,7 +8,7 @@ include './requete.php';
         <img src="../public/img/vehicule/lexus.jpg" width="100%" height="100%" class="img-responsive">
     </div>
     <div class="col-md-4 col-md-offset-1 detail-produit">
-        <span class="bar-detail-produit row container col-md-12">D&eacute;tails du produit du produit</span>
+        <span class="bar-detail-produit row container col-md-12">D&eacute;tails du produit</span>
         <div>
             <span class="col-md-12">&nbsp;</span>
             <p>
