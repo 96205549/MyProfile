@@ -49,7 +49,7 @@ if (isset($_POST['submitInfo'])) {
             echo "oui enregistrement effectuer avec succès";
             header('Location: admin.php?tab=info');
         } else {
-            echo "echec d'enregistrement";
+            echo "echec d'enregistrement pour retourné à la page précédente veuillez cliquer ici.. <a href='admin.php?tab=info'>retour</a>";
         }
     }
 }
@@ -69,7 +69,7 @@ if (isset($_POST['submitPresta'])) {
         echo "oui enregistrement effectuer avec succès";
         header('Location: admin.php?tab=prest');
     } else {
-        echo "echec d'enregistrement";
+        echo "echec d'enregistrement pour retourné à la page précédente veuillez cliquer ici.. <a href='admin.php?tab=prest'>retour</a>";
     }
 }
 
@@ -110,7 +110,7 @@ if (isset($_POST['postcv'])) {
             echo "oui enregistrement effectuer avec succès";
             header('Location: admin.php?tab=cv');
         } else {
-            echo "echec d'enregistrement";
+            echo "echec d'enregistrement pour retourné à la page précédente veuillez cliquer ici.. <a href='admin.php?tab=cv'>retour</a>";
         }
     }
 }
@@ -140,7 +140,7 @@ if (isset($_POST['postwork'])) {
             echo "oui enregistrement effectuer avec succès";
             header('Location: admin.php?tab=blog');
         } else {
-            echo "echec d'enregistrement";
+            echo "echec d'enregistrement pour retourné à la page précédente veuillez cliquer ici.. <a href='admin.php?tab=blog'>retour</a>";
         }
     }
 }
@@ -152,11 +152,9 @@ if (isset($_POST['postwork'])) {
 if (isset($_POST['submitSlide'])) {
 
     $date = time();
-    // $iduser = '1';
-    //echo '<br>addresse=>'.$addr."<br>nom=>".$nomets."<br>slog=>".$slogan."<br>bp=>".$bp."<br>cont=>".$cont."<br>date=>".$date."<br>logo=>".$logo."<br>";
-    //$select = $db->query("SELECT * FROM `post` WHERE id_users='$iduser'");
-//    $data = $select->fetchAll();
-//    $taille = sizeof($data);
+   $titre= $_POST['titreSlide'];
+   $comment= $_POST['commentSlide'];
+   
     if (isset($_FILES['slidefile'])) {
         $dossier = '../public/img/';
         $fichier = basename($_FILES['slidefile']['name']);
@@ -165,13 +163,13 @@ if (isset($_POST['submitSlide'])) {
         } else { //Sinon (la fonction renvoie FALSE).
             $file_name = "slide";
         }
-        $inside = $db->query("INSERT INTO `slide`(`nomImage`, `chemin`, `date`, `id_users`) VALUES ('$file_name','$file_name','$date','$id')");
+        $inside = $db->query("INSERT INTO `slide`(`titre`,`commentaire`,`chemin`, `date`, `id_users`) VALUES ('$titre','$comment','$file_name','$date','$id')");
         //die(print_r($inside));
         if ($inside == true) {
             echo "oui enregistrement effectuer avec succès";
             header('Location: admin.php?tab=slide');
         } else {
-            echo "echec d'enregistrement";
+            echo "echec d'enregistrement pour retourné à la page précédente veuillez cliquer ici.. <a href='admin.php?tab=slide'>retour</a>";
         }
     }
 }
@@ -262,6 +260,13 @@ if (isset($_GET['code'])) {
         $inside = $db->query("delete from offres where id='$id'");
         if ($inside) {
             header('Location: admin.php?tab=prest');
+        } else {
+            echo "echec de suppression";
+        }
+    }elseif ($syst == "blog") {
+        $inside = $db->query("delete from post where id='$id'");
+        if ($inside) {
+            header('Location: admin.php?tab=blog');
         } else {
             echo "echec de suppression";
         }

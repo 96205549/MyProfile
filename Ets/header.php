@@ -34,7 +34,7 @@ and open the template in the editor.
                             <img src="../public/img/<?= $Ets[3] ?>" class="img-responsive" width="100%" height="100%">
                         </div>
                         <div class="col-md-9 head-bloc">                          
-                            <img src="../public/img/img-prestation/entete.png" class="img-responsive col-md-offset-2">                    
+                            <img src="../public/img/img-prestation/entetenew.png" class="img-responsive col-md-offset-1">                    
                         </div>
                     </div>
                     <div class="col-sm-12 col-xs-12 col-md-12">

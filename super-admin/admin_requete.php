@@ -14,6 +14,7 @@ $id = $_SESSION['user'];
 
 $sqlEts = 'SELECT * FROM ets order by id desc limit 1';
 $sli = 'SELECT * FROM slide order by id desc';
+$post = 'SELECT * FROM post order by id desc';
 $sqlService = 'SELECT * FROM offres order by id desc';
 $sqlcv = "SELECT * FROM cv where id_users='$id' order by id desc limit 1";
 $user = "SELECT * FROM users where id='$id' order by id desc limit 1";
@@ -21,4 +22,5 @@ $data = $db->query($sqlEts);
 $data2 = $db->query($sqlService);
 $datacv = $db->query($sqlcv)->fetch();
 $slides = $db->query($sli)->fetchAll();
+$Posts = $db->query($post)->fetchAll();
 $profil = $db->query($user)->fetch();

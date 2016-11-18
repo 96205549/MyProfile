@@ -9,17 +9,17 @@ and open the template in the editor.
 */
 .connect{
     margin: 100px  ;
-	padding: 0 ;
-	/*background: #dea;*/
-	background: slategray;
+    padding: 0 ;
+    /*background: #dea;*/
+    background: slategray;
 }
 .conteneur-con
 {
-	/*width: 800px ;*/
-	margin:  auto ;
-        margin-top: 100px;
-	
-        
+    /*width: 800px ;*/
+    margin:  auto ;
+    margin-top: 100px;
+
+
 }
 .conteneur{
     height: 900px;
@@ -33,9 +33,16 @@ and open the template in the editor.
     background-color: aliceblue;
 }
 .bloc-connexion{
-   margin-left: 300px;
-  /* background: salmon;*/
+    margin-left: 300px;
+    /* background: salmon;*/
 }
 .connecter{
     border-bottom-color: #761c19;
+}
+
+.p{
+    font-family: 'Open Sans', 'Trebuchet MS', arial, sans-serif;
+    font-size: 12px;
+    line-height: 1.7em;
+
 }

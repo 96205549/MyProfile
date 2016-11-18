@@ -181,7 +181,7 @@ if ($index == "admin.php") {
                                                         <td align='center'><!--a href="#"><i class="fa fa-pencil text-warning text-center"></i></a>&nbsp;--><a href="controller.php?code=prest/<?= $value[0] ?>"><i class="fa fa-remove text-danger"></i></a></td>
                                                     </tr>
                                                 <?php endforeach; ?>
-                                               
+
                                                 <tbody>
 
                                                 </tbody>
@@ -196,12 +196,12 @@ if ($index == "admin.php") {
                                     </div> <!-- /.heading-block -->
                                     <form  method="post" action="controller.php" class="form-horizontal" enctype="multipart/form-data">
                                         <?php //foreach ($datacv as $value): ?>
-                                            <div class="col-md-12" style="margin-top: 30px; padding: 4px; ">
-                                                <label><?= (sizeof($datacv)>0) ? $datacv[2]:" " ?></label><br>
-                                                <span><input type="file" name="cvfile" class="form-control"></span><br>
-                                                <span><textarea class="form-control ckeditor" rows="8" name="cvtexte"><?= (sizeof($datacv)>0) ? $datacv[1]:" " ?></textarea></span><br>
-                                                <span><button class="btn btn-primary" name="postcv">Poster</button> &nbsp; <button class="btn btn-default">Anuler</button></span><br>
-                                            </div>
+                                        <div class="col-md-12" style="margin-top: 30px; padding: 4px; ">
+                                            <label><?= (sizeof($datacv) > 0) ? $datacv[2] : " " ?></label><br>
+                                            <span><input type="file" name="cvfile" class="form-control"></span><br>
+                                            <span><textarea class="form-control ckeditor" rows="8" name="cvtexte"><?= (sizeof($datacv) > 0) ? $datacv[1] : " " ?></textarea></span><br>
+                                            <span><button class="btn btn-primary" name="postcv">Poster</button> &nbsp; <button class="btn btn-default">Anuler</button></span><br>
+                                        </div>
                                         <?php //endforeach; ?>
                                     </form>
                                 </div> <!-- /.tab-pane -->
@@ -284,7 +284,34 @@ if ($index == "admin.php") {
                                             <span><button class="btn btn-primary" name="postwork">Poster</button> &nbsp; <button class="btn btn-default">Anuler</button></span><br>
 
                                         </div>
+                                        <div class="col-md-12">
+                                            <table class=" col-md-12 table-responsive table-striped table-hover table-bordered" style="margin-top: 20px;">
+                                                <tr style="height: 30px;" class="table-responsive">
+                                                    
+                                                    <td><b></b></td>
+                                                    <td><b>Post-comment</b></td>
+                                                    <td><b>Date du post</b></td>
+                                                    <!--td>Modifier</td-->
+                                                    <td><b>Action</b></td>
+                                                </tr>
+                                                <?php foreach ($Posts as $blog) {
+
+                                                    ?>
+                                                    <tr style="height: 50px;">
+                                                        <td align='center'><img src="../public/img/<?= $blog['chemin_url'] ?>" width="80" height="50" class="img-responsive thumbnail"></td>
+                                                        <td class="p col-md-7"><p><?= $blog['texte'] ?></p></td>
+                                                        <td class="p" align='center'><p class="p"><?= date("d-m-y",$blog['date']); ?></p></td>
+                                                        <td align='center'><a href="controller.php?code=blog/<?= $blog[0] ?>"><i class="fa fa-remove text-danger"></i></a></td>
+                                                    </tr>
+                                                <?php } ?>
+
+                                                <tbody>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </form>
+
                                 </div> 
                                 <!-- integration du slide-->
                                 <div class="tab-pane fade in <?= ($tab == "slide") ? "active" : " " ?>" id="slide">
@@ -299,15 +326,18 @@ if ($index == "admin.php") {
                                         <div id="demo2" class="collapse col-md-12">
                                             <span class="clearfix">&nbsp;</span>
                                             <span  class="col-md-8"><input type="file" class=" form-control fileinput" name="slidefile"></span>
-                                            <span  class="col-md-3"><input type="submit" class="btn btn-default" name="submitSlide" value="Ajouter"></span> 
+                                            <span  class="col-md-3"><input type="submit" class="btn btn-primary" name="submitSlide" value="+ Ajouter"></span> 
+                                            <span  class="col-md-8"><input type="text" class="form-control" name="titreSlide" placeholder="titre du slide"></span> 
+                                            <span class="clearfix">&nbsp;</span><br>
+                                            <span  class="col-md-8"><textarea class="form-control" name="commentSlide" placeholder="commenter le slide"></textarea></span> 
                                         </div>
                                         <div class="col-md-12">
                                             <table class=" col-md-12 table-responsive table-striped table-hover table-bordered" style="margin-top: 20px;">
                                                 <tr style="height: 30px;" class="table-responsive">
                                                     <td></td>
+                                                    <td><b>Titre</b></td>
                                                     <td><b>Nom de l'image</b></td>
-                                                    <td><b>Chemin</b></td>
-                                                    <td><b>Taille</b></td>
+                                                    <td><b>Commentaire</b></td>
                                                     <!--td>Modifier</td-->
                                                     <td><b>Supprimer</b></td>
                                                 </tr>
@@ -315,10 +345,10 @@ if ($index == "admin.php") {
 
                                                     ?>
                                                     <tr style="height: 40px;">
-                                                        <td align='center'><img src="../public/img/<?= $slide[1] ?>" width="80" height="50" class="img-responsive thumbnail"></td>
-                                                        <td><?= $slide[1] ?></td>
-                                                        <td><?= $slide[2] ?></td>
-                                                        <td>198 k0</td>
+                                                        <td align='center'><img src="../public/img/<?= $slide['chemin'] ?>" width="80" height="50" class="img-responsive thumbnail"></td>
+                                                        <td><p class="p"><?= $slide['titre'] ?></p></td>
+                                                        <td><p class="p"><?= $slide['chemin'] ?></p></td>
+                                                        <td><p class="p"><?= $slide['commentaire'] ?></p></td>
                                                         <!--td align='center'><a href="#"><i class="fa fa-pencil text-warning text-center"></i></a></td-->
                                                         <td align='center'><a href="controller.php?code=slide/<?= $slide[0] ?>"><i class="fa fa-remove text-danger"></i></a></td>
                                                     </tr>

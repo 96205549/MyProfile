@@ -20,6 +20,7 @@ $Cv = $cv->fetchAll();
 $Ets = $ets->fetch();
 
 $slid = $db->query($sli1)->fetch();
+//die(print_r($slid));
 $slides = $slide->fetchAll();
 $services = $service->fetchAll();
 $posts = $post->fetchAll();
