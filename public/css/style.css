@@ -237,3 +237,22 @@ p {
     background-color: #761c19;
     color: #fff;
 }
+.produit-profile{
+    height: 400px;
+    /*background-color: gainsboro;*/
+}
+.detail-produit{
+    height: 400px;
+   /* background-color:  #e5e5e5;*/
+}
+.band{
+    border-width: 1px;
+    border: solid 1px #0086b3;
+    border-bottom-color: slategray;
+    margin-bottom: 15px;
+}
+.bar-detail-produit{
+    padding: 5px;
+    background-color: #761c19;
+    color: #fff;
+}
