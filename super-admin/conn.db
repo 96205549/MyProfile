@@ -11,3 +11,5 @@ $db = new PDO('mysql:host=localhost;dbname=banlieu-tic', 'root', '');
 //}else {
 //    echo 'echec de connexion au serveur';
 //}
+
+    

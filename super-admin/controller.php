@@ -152,9 +152,9 @@ if (isset($_POST['postwork'])) {
 if (isset($_POST['submitSlide'])) {
 
     $date = time();
-   $titre= $_POST['titreSlide'];
-   $comment= $_POST['commentSlide'];
-   
+    $titre = $_POST['titreSlide'];
+    $comment = $_POST['commentSlide'];
+
     if (isset($_FILES['slidefile'])) {
         $dossier = '../public/img/';
         $fichier = basename($_FILES['slidefile']['name']);
@@ -263,7 +263,7 @@ if (isset($_GET['code'])) {
         } else {
             echo "echec de suppression";
         }
-    }elseif ($syst == "blog") {
+    } elseif ($syst == "blog") {
         $inside = $db->query("delete from post where id='$id'");
         if ($inside) {
             header('Location: admin.php?tab=blog');
@@ -272,3 +272,107 @@ if (isset($_GET['code'])) {
         }
     }
 }
+
+if (isset($_POST['submitProduit'])) {
+    $nomP = $_POST['nom-prod'];
+    $detailP = $_POST['detail'];
+    $prixP = $_POST['prix'];
+    $categorieP = $_POST['categorie'];
+    $date = time();
+    $idprod = $_POST['idprod'];
+
+    //die(print_r('nom=>'.$nomP.'- deta=>'.$detailP.'- prix=>'.$prixP.'- categ=>'.$categorieP));
+
+    if (isset($_FILES['img-prod'])) {
+        $dossier = '../public/img/vehicule/';
+        $fichier = basename($_FILES['img-prod']['name']);
+        if (move_uploaded_file($_FILES['img-prod']['tmp_name'], $dossier . $fichier)) { //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
+            $file_name = $_FILES['img-prod']['name'];
+        }
+        //die(print_r($file_name));
+        if ($idprod == "0") {
+            $inside = $db->query("INSERT INTO `produits`(`libelleProduit`,`brefDetail`,`prix`, `imageProduit`, `idOffre`, `date`) VALUES ('$nomP','$detailP','$prixP','$file_name','$categorieP','$date')");
+        } else {
+
+            $req = "SELECT * FROM produits where id='$idprod' ";
+            $prod = $db->query($req)->fetch();
+            if (empty($file_name)) {
+                $file_name = $prod[4];
+            }
+            $inside = $db->prepare("UPDATE produits SET libelleProduit=:libelle, brefDetail=:detail, prix=:prix, imageProduit=:img, idOffre=:categ, date=:date WHERE id=:id");
+            $inside->execute(array(
+                'libelle' => $nomP,
+                'detail' => $detailP,
+                'prix' => $prixP,
+                'img' => $file_name,
+                'categ' => $categorieP,
+                'date' => $date,
+                'id' => $id
+                )
+            );
+        }
+        header('Location: add-prod.php?tab=info');
+
+        if ($inside == true) {
+            echo "oui enregistrement effectuer avec succès";
+            header('Location: add-prod.php?tab=info');
+        } else {
+            echo "echec d'enregistrement";
+        }
+    }
+}
+
+
+if (isset($_POST['addAttribut'])) {
+    $idprod = $_POST['idprod'];
+    $nomAttr = $_POST['nomAttrib'];
+    $valeurAttr = $_POST['valeurAttrib'];
+    $nbre = sizeof($nomAttr);
+    $i = 0;
+    foreach ($nomAttr as $keya => $attribu) {
+        foreach ($valeurAttr as $keyb => $value) {
+            if ($keya == $keyb) {
+                //echo $attribu . '---->' . $value . '<br>';
+                $inside = $db->query("INSERT INTO `attributs`(`nomAttribut`,`valeurAttribut`,`idProduit`) VALUES ('$attribu','$value','$idprod')");
+
+                $i++;
+            }
+        }
+    }
+    if ($nbre == $i) {
+        header('Location: add-prod.php?tab=attrib');
+    } else {
+        echo "echec d'enregistrement";
+    }
+}
+
+if (isset($_POST['submitRess'])) {
+
+    $idprod = $_POST['idprod'];
+    if (isset($_FILES['resProd'])) {
+        $dossier = '../public/img/vehicule/';
+        $fichier = basename(implode(",", $_FILES['resProd']['name']));
+        $tmp = implode(",", $_FILES['resProd']['tmp_name']);
+        $tmps = explode(",", $tmp);
+        $datafile = explode(",", $fichier);
+        $nbre = sizeof($datafile);
+        $i = 0;
+        //die(print_r($tmps));
+        foreach ($datafile as $keya => $value) {
+            foreach ($tmps as $keyb => $tmp_name) {
+                if ($keya == $keyb) {
+                    move_uploaded_file($tmp_name, $dossier . $value); //Si la fonction renvoie TRUE, c'est que ça a fonctionné...
+                    $inside = $db->query("INSERT INTO `ressources`(`imageProduit`,`idProduit`) VALUES ('$value','$idprod')");
+                    $i++;
+                }
+            }
+        }
+        if ($inside == true) {
+            echo "oui enregistrement effectuer avec succès";
+            header('Location: add-prod.php?tab=ress');
+        } else {
+            echo "echec d'enregistrement";
+        }
+    }
+}
+    

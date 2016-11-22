@@ -13,11 +13,20 @@ function addImage() {
             '</div>' +
             ' <div class="fileinput-preview fileinput-exists thumbnail" style="max-width: 200px; max-height: 150px;"></div>' +
             '<div>' +
-            '<span class="btn btn-default btn-file"><span class="fileinput-new">Selectionnez l&apos;image</span><span class="fileinput-exists">Changer</span><input id="input" type="file" name="img[]" class="file" data-show-caption="true"></span>' +
+            '<span class="btn btn-default btn-file"><span class="fileinput-new">Selectionnez l&apos;image</span><span class="fileinput-exists">Changer</span><input id="input" type="file" name="resProd[]" class="file" data-show-caption="true"></span>' +
             '<a href="#" class="btn btn-default fileinput-exists" data-dismiss="fileinput">Supprimer</a>' +
             '</div>' +
             '</div>' +
             '</div>';
     var imgDiv = $("#tableau_image");
     imgDiv.append(code);
+}
+
+function addbloc() {
+    code = '<span class="clearfix">&nbsp;</span>' +
+            '<span  class="col-md-5"><input type="text" class=" form-control" name="nomAttrib[]" placeholder="nom attribut.."></span>' +
+            '<span  class="col-md-4"><input type="text" class=" form-control" name="valeurAttrib[]" placeholder="valeur attribut.."></span>'+
+            '<span class="clearfix">&nbsp;</span>';
+    var adDiv = $("#tableau_bloc");
+    adDiv.append(code);
 }

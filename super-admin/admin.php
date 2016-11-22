@@ -32,11 +32,7 @@ if ($index == "admin.php") {
         <link rel="stylesheet" href="../public/vendor/font-awesome/css/font-awesome.min.css" type="text/css">
         <link rel="stylesheet" href="../public/vendor/font-awesome/css/font-awesome.css.map" type="text/css">
         <!--link rel="stylesheet" href="../public/vendor/bootstrap/dist/css/bootstrap-theme.css" type="text/css"-->
-        <link rel="stylesheet" href="../public/vendor/bootstrap/dist/css/bootstrap.css" type="text/css">
-        <!--link rel="stylesheet" href="../public/vendor/bootstrap/dist/css/bootstrap.css.map" type="text/css"-->
-        <!--link rel="stylesheet" href="../public/vendor/bootstrap/dist/css/bootstrap.min.css" type="text/css"-->
-        <!--link rel="stylesheet" href="../public/vendor/bootstrap/dist/css/bootstrap-theme.css" type="text/css"-->
-        <!--link rel="stylesheet" href="../public/vendor/bootstrap/dist/css/bootstrap-theme.css.map" type="text/css"-->
+        <link rel="stylesheet" href="../public/vendor/bootstrap/dist/css/bootstrap.css" type="text/css">      
     </head>
     <body>
         <div class="container">
@@ -49,7 +45,7 @@ if ($index == "admin.php") {
                     <div class="layout layout-main-right layout-stack-sm">
                         <div class="col-md-3 col-sm-4 layout-sidebar">
                             <div class="nav-layout-sidebar-skip">
-                                <strong>Tab Navigation</strong> / <a href="prod-add.php">Skip to Content</a>	
+                                <strong>Tab Navigation</strong> / <a href="new-prod.php">Skip to Content</a>	
                             </div>
                             <div class="clearfix">&nbsp;</div>
                             <div class="main-setup">

@@ -5,4 +5,4 @@
  * and open the template in the editor.
  */
 
-header('Location: Ets/index.php');
+header('Location: Ets/');
