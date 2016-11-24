@@ -21,9 +21,11 @@ and open the template in the editor.
         <link rel="stylesheet" href="../public/vendor/bootstrap/dist/css/bootstrap.min.css" type="text/css">
         <link rel="stylesheet" href="../public/vendor/bootstrap/dist/css/bootstrap-theme.css" type="text/css">
         <link rel="stylesheet" href="../public/vendor/bootstrap/dist/css/bootstrap-theme.css.map" type="text/css">
-        
-        
-        
+        <link rel="stylesheet" href="../public/css/mag.css">
+        <link rel="stylesheet" href="../public/css/index.css">
+
+
+
     </head>
     <body class="body"> 
         <div class="container">

@@ -6,15 +6,60 @@
  */
 include '../super-admin/conn.db';
 //session_start();
-$idpost= 1;
+$idpost = 1;
+/*
+ * requête pour la premère donnée du slide
+ */
 $sli1 = 'SELECT * FROM slide order by id desc limit 1';
+/*
+ * requête pour tous les données du slide
+ */
 $slide = $db->query("select * from slide");
+/*
+ * requête de tous les offres de services
+ */
 $service = $db->query("select * from offres");
+/*
+ * recupération de tous les posts
+ */
 $post = $db->query("select * from post");
+/*
+ * requête pour tous les utilisateurs
+ */
 $user = $db->query("select * from users");
+/*
+ * requête pour cv
+ */
 $cv = $db->query("select * from cv ");
+/*
+ * requête pour info de l'entreprise
+ */
 $ets = $db->query("select * from ets ");
+/*
+ * requete pour tous les messages
+ */
 $postMsg = $db->query("select * from messages");
+
+/*
+ * requête pour les 8 produit propres au transit
+ */
+$rprodTr = $db->query("select * from produits where idOffre='9' order by id DESC limit 8");
+/*
+ * requête pour les 8 produit propres à l'immobilier
+ */
+$rprodIm = $db->query("select * from produits where idOffre='8' order by id DESC limit 8");
+
+/*
+ * transit
+ */
+
+$produitsT = $rprodTr->fetchAll();
+
+/*
+ * immobilier
+ */
+$produitsI = $rprodIm->fetchAll();
+
 $msgs = $postMsg->fetchAll();
 $Cv = $cv->fetchAll();
 $Ets = $ets->fetch();
@@ -26,12 +71,3 @@ $services = $service->fetchAll();
 $posts = $post->fetchAll();
 $users = $user->fetchAll();
 
-//function getcv($param)
-//{
-//    //include '../super-admin/conn.db';
-//    //$db = new PDO('mysql:host=localhost;dbname=banlieu-tic', 'root', '');
-//    $cv = $db->query("select * from cv where id_users='$param'");
-//    $Cv = $cv->fetch();
-//    $cvT = $Cv['cv_texte'];
-//    echo $cvT;
-//}

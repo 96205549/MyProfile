@@ -10,5 +10,5 @@
     </div>
 </nav>
 <form method="post" action="admin_requete.php">
-   <input type="text" name="Lprod" value="0">
+    <input type="hidden" name="Lprod" value="0">
 </form>

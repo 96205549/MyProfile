@@ -6,59 +6,90 @@
         <div class="col-md-12 promotion-vehicule">
             Promotion des v&eacute;hicules d&apos;occasion 
         </div>
+        <?php $countTr = sizeof($produitsT); ?>
         <div class="col-md-12 cadre-transit">
             <div class="carousel slide"  id="carousel2">
                 <div class="carousel-inner">
                     <div class="item active">
+                        <?php
+                        $tot = sizeof($produitsT);
+                        $i = 0;
+                        foreach ($produitsT as $key => $trans):
+                            $i++;
+                            $dataT[] = $trans[0] . ';' . $trans[1] . ';' . $trans[3] . ';' . $trans[4];
+                        endforeach;
 
-                        <div class="col-md-3 bloc-vehicule">
-                            <div class="col-md-12 col-xs-12 profil-vehicule">
-                                <a href="services-all.php"><img class="img-responsive" src="../public/img/vehicule/merco.jpg" width="100%" height="100%"></a> 
-                            </div>
-                            <div class="col-md-12 col-xs-12">
-                                <p>Marque: Mercedez-benz</p>
-                                2.000000 F CFA
-                            </div>
-                            <div class="col-md-12 col-xs-12">
-                                <a href="#" class="btn btn-default btn-sm">Details >></a>
-                            </div>
+                        ?>
+                        <?php
+                        //die(print_r($i));
+                        if ($tot > 0 && $tot < 4) {
+                            for ($j = 0; $j < $tot; $j++) :
+                                $val = explode(";", $dataT[$j]);
+
+                                ?>
+                                <div class="col-md-3 bloc-vehicule">
+                                    <div class="col-md-12 col-xs-12 profil-vehicule">
+                                        <a href="services-all.php"><img class="img-responsive" src="../public/img/vehicule/<?= $val[3]; ?>" width="100%" height="100%"></a> 
+                                    </div>
+                                    <div class="col-md-12 col-xs-12">
+                                        <p><?= $val[1]; ?></p>
+                                        <?= $val[2]; ?>
+                                    </div>
+                                    <div class="col-md-12 col-xs-12">
+                                        <a href="#" class="btn btn-default btn-sm">Details >></a>
+                                    </div>
+                                </div>
+
+                                <?php
+                            endfor;
+                        }elseif ($tot >= 4) {
+                            for ($i = 0; $i < 4; $i++) {
+                                $val = explode(";", $dataT[$i]);
+
+                                ?>
+                                <div class="col-md-3 bloc-vehicule">
+                                    <div class="col-md-12 col-xs-12 profil-vehicule">
+                                        <a href="services-all.php?prod/<?= $val[0]; ?>"><img class="img-responsive" src="../public/img/vehicule/<?= $val[3]; ?>" width="100%" height="100%"></a> 
+                                    </div>
+                                    <div class="col-md-12 col-xs-12">
+                                        <p><?= $val[1]; ?></p>
+                                        <?= $val[2]; ?>
+                                    </div>
+                                    <div class="col-md-12 col-xs-12">
+                                        <a href="#" class="btn btn-default btn-sm">Details >></a>
+                                    </div>
+                                </div>
+                            <?php }
+
+                            ?>
                         </div>
-                        <div class="col-md-3 bloc-vehicule">
-                            <div class="col-md-12 col-xs-12 profil-vehicule">
-                                <a href="#"><img class="img-responsive" src="../public/img/vehicule/lexus.jpg" width="100%" height="100%"></a> 
-                            </div>
-                            <div class="col-md-12 col-xs-12">
-                                <p>Marque: Lexus</p>
-                                2.000000 F CFA
-                            </div>
-                            <div class="col-md-12 col-xs-12">
-                                <a href="#" class="btn btn-default btn-sm">Details >></a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 bloc-vehicule">
-                            <div class="col-md-12 col-xs-12 profil-vehicule">
-                                <a href="#"><img class="img-responsive" src="../public/img/vehicule/honda.jpg" width="100%" height="100%"></a> 
-                            </div>
-                            <div class="col-md-12 col-xs-12">
-                                <p>Marque: honda</p>
-                                2.000000 F CFA
-                            </div>
-                            <div class="col-md-12 col-xs-12">
-                                <a href="#" class="btn btn-default btn-sm">Details >></a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 bloc-vehicule">
-                            <div class="col-md-12 col-xs-12 profil-vehicule">
-                                <a href="#"><img class="img-responsive" src="../public/img/vehicule/bmw.jpg" width="100%" height="100%"></a> 
-                            </div>
-                            <div class="col-md-12 col-xs-12">
-                                <p>Marque: BMW</p>
-                                2.000000 F CFA
-                            </div>
-                            <div class="col-md-12 col-xs-12">
-                                <a href="#" class="btn btn-default btn-sm">Details >></a>
-                            </div>
-                        </div>
+                        <?php
+                    }if (($tot > 3 && $tot <= 7) || $tot > 3 && $tot > 7) {
+
+                        ?>                         
+                        <div class="item">
+                            <?php
+                            for ($i = 4; $i < $tot; $i++) {
+                                $val = explode(";", $dataT[$i]);
+
+                                ?>
+                                <div class="col-md-3 bloc-vehicule">
+                                    <div class="col-md-12 col-xs-12 profil-vehicule">
+                                        <a href="services-all.php?prod/<?= $val[0]; ?>"><img class="img-responsive" src="../public/img/vehicule/<?= $val[3]; ?>" width="100%" height="100%"></a> 
+                                    </div>
+                                    <div class="col-md-12 col-xs-12">
+                                        <p><?= $val[1]; ?></p>
+                                        <?= $val[2]; ?>
+                                    </div>
+                                    <div class="col-md-12 col-xs-12">
+                                        <a href="#" class="btn btn-default btn-sm">Details >></a>
+                                    </div>
+                                </div>
+                                <?php
+                            }
+                        }
+
+                        ?>
                     </div>
                 </div>
                 <a data-slide="prev" href="#carousel2" class="left carousel-control" style="left:-40px;">
@@ -76,7 +107,7 @@
 <div class="clearfix">&nbsp;</div>
 <div class="clearfix">&nbsp;</div>
 <div class="row col-md-12">
-    
+
     <div class="col-xs-12 col-md-12 col-sm-12 transit">
         <span class="service"><b>SERVICE IMMOBILIER</b></span>
         <div class="col-md-12 promotion-vehicule">
@@ -137,6 +168,44 @@
                             </div>
                         </div>
                     </div>
+                    <div class="item">
+                        <div class="col-md-3 bloc-vehicule">
+                            <div class="col-md-12 col-xs-12 profil-vehicule">
+                                <a href="#"><img class="img-responsive" src="../public/img/immobilier/e.jpg" width="100%" height="100%"></a> 
+                            </div>
+                            <div class="col-md-12 col-xs-12">
+                                <p>Villa complet</p>
+                                2.000000 F CFA
+                            </div>
+                            <div class="col-md-12 col-xs-12">
+                                <a href="#" class="btn btn-default btn-sm">Details >></a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 bloc-vehicule">
+                            <div class="col-md-12 col-xs-12 profil-vehicule">
+                                <a href="#"><img class="img-responsive" src="../public/img/immobilier/e.jpg" width="100%" height="100%"></a> 
+                            </div>
+                            <div class="col-md-12 col-xs-12">
+                                <p>Villa complet</p>
+                                2.000000 F CFA
+                            </div>
+                            <div class="col-md-12 col-xs-12">
+                                <a href="#" class="btn btn-default btn-sm">Details >></a>
+                            </div>
+                        </div>
+                        <div class="col-md-3 bloc-vehicule">
+                            <div class="col-md-12 col-xs-12 profil-vehicule">
+                                <a href="#"><img class="img-responsive" src="../public/img/immobilier/e.jpg" width="100%" height="100%"></a> 
+                            </div>
+                            <div class="col-md-12 col-xs-12">
+                                <p>Villa complet</p>
+                                2.000000 F CFA
+                            </div>
+                            <div class="col-md-12 col-xs-12">
+                                <a href="#" class="btn btn-default btn-sm">Details >></a>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <a data-slide="prev" href="#carousel3" class="left carousel-control" style="left:-40px;">
                     <span class="icon-prev"></span>
@@ -147,7 +216,7 @@
             </div>
         </div>
     </div>
-    
+
 </div>
 <div class="clearfix">&nbsp;</div>
 
@@ -168,7 +237,7 @@
 
                 ?>
                 <i class="fa fa-caret-right"></i>&nbsp; <?= $service['1']; ?><br/><br/>
-            <?php } ?>
+<?php } ?>
             <!--i class="fa fa-caret-right"></i> Camera video surveillance<br/><br/>
             <i class="fa fa-caret-right"></i> Maintenance et réseaux informatique<br/><br/>
             <i class="fa fa-caret-right"></i> Montage des antennes parabolique<br/><br/>
@@ -207,13 +276,15 @@
 <script type="text/javascript" src="../public/popup/js/mvpready-core.js"></script>
 <script type="text/javascript" src="../public/popup/js/mvpready-helpers.js"></script>
 <script type="text/javascript" src="../public/popup/js/mvpready-admin.js"></script>
-<script>
-    /* $(document).ready(function () {
-     $(".nav a").on("click", function () {
-     $(".nav").find(".active").removeClass("active");
-     $(this).parent().addClass("active");
-     });
-     
-     });*/
-</script>
+<!--script src="../public/js/zoom/js/jquery.js"></script-->
+<script src="../public/js/zoom/js/jquery.bridget.js"></script>
+<script src="../public/js/zoom/js/jquery.mousewheel.js"></script>
+<script src="../public/js/zoom/js/jquery.event.drag.js"></script>
+<script src="../public/js/zoom/js/gajs.js"></script>
+<script src="../public/js/zoom/js/PreventGhostClick.js"></script>
+<script src="../public/js/zoom/js/mag-analytics.js"></script>
+<script src="../public/js/zoom/js/mag.js"></script>
+<script src="../public/js/zoom/js/mag-jquery.js"></script>
+<script src="../public/js/zoom/js/mag-control.js"></script>
+<script src="../public/js/zoom/js/index.js"></script>
 </html>
