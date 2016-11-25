@@ -83,287 +83,100 @@ $ress = $db->query("select * from ressources where idProduit='$reqProd[0]' order
             </p>
         </div>
     </div>
-    <div class="col-md-12 cadre-transit">
-        <div class="carousel slide"  id="carousel3">
-            <div class="carousel-inner">
-                <div class="item active">
-                    <?php
-                    $tota = sizeof($ress);
-                    $i = 0;
-                    foreach ($ress as $key => $trans):
-                        $i++;
-                        $ressT[] = $trans[0] . ';' . $trans[1];
-                    endforeach;
+    <?php if (sizeof($ress) > 0): ?>
+        <div class="col-md-12 cadre-transit">
+            <div class="carousel slide"  id="carousel3">
+                <div class="carousel-inner">
+                    <div class="item active">
+                        <?php
+                        $tota = sizeof($ress);
+                        $i = 0;
+                        foreach ($ress as $key => $trans):
+                            $i++;
+                            $ressT[] = $trans[0] . ';' . $trans[1];
+                        endforeach;
 
-                    ?>
-                    <?php
-                    //die(print_r($i));
-                    if ($tota > 0 && $tota < 4) {
-                        for ($j = 0; $j < $tota; $j++) :
-                            $val = explode(";", $ressT[$j]);
+                        ?>
+                        <?php
+                        //die(print_r($i));
+                        if ($tota > 0 && $tota < 4) {
+                            for ($j = 0; $j < $tota; $j++) :
+                                $val = explode(";", $ressT[$j]);
 
-                            ?>
-                            <div class="col-md-3 bloc-vehicule">
-                                <div class="col-md-12 col-xs-12 profil-vehicule">
-                                    <a href="#rs<?= $val[0]; ?>" data-toggle="tab"><img class="img-responsive" src="../public/img/vehicule/<?= $val[1]; ?>" width="100%" height="100%"></a> 
+                                ?>
+                                <div class="col-md-3 blo-vehicule">
+                                    <div class="col-md-12 col-xs-12 profil-vehicule">
+                                        <a href="#rs<?= $val[0]; ?>" data-toggle="tab"><img class="img-responsive" src="../public/img/vehicule/<?= $val[1]; ?>" width="100%" height="100%"></a> 
+                                    </div>
+
                                 </div>
 
-                            </div>
+                                <?php
+                            endfor;
+                        }elseif ($tota >= 4) {
+                            for ($i = 0; $i < 4; $i++) {
+                                $val = explode(";", $ressT[$i]);
 
+                                ?>
+                                <div class="col-md-3 bloc-vehicule">
+                                    <div class="col-md-12 col-xs-12 profil-vehicule">
+                                        <a href="#rs<?= $val[0]; ?>" data-toggle="tab"><img class="img-responsive" src="../public/img/vehicule/<?= $val[1]; ?>" width="100%" height="100%"></a> 
+                                    </div>
+
+                                </div>
+                            <?php }
+
+                            ?>
+                        </div>
+                    <?php } if (($tota > 3 && $tota <= 7) || $tota > 3 && $tota > 7) {
+
+                        ?>                         
+                        <div class="item">
                             <?php
-                        endfor;
-                    }elseif ($tota >= 4) {
-                        for ($i = 0; $i < 4; $i++) {
-                            $val = explode(";", $ressT[$i]);
+                            for ($i = 4; $i < $tota; $i++) {
+                                $val = explode(";", $ressT[$i]);
 
-                            ?>
-                            <div class="col-md-3 bloc-vehicule">
-                                <div class="col-md-12 col-xs-12 profil-vehicule">
-                                    <a href="#rs<?= $val[0]; ?>" data-toggle="tab"><img class="img-responsive" src="../public/img/vehicule/<?= $val[1]; ?>" width="100%" height="100%"></a> 
+                                ?>
+                                <div class="col-md-3 bloc-vehicule">
+                                    <div class="col-md-12 col-xs-12 profil-vehicule">
+                                        <a href="#rs<?= $val[0]; ?>" data-toggle="tab"><img class="img-responsive" src="../public/img/vehicule/<?= $val[1]; ?>" width="100%" height="100%"></a> 
+                                    </div>
                                 </div>
-
-                            </div>
-                        <?php }
+                                <?php
+                            }
+                        }
 
                         ?>
                     </div>
-                <?php } if (($tota > 3 && $tota <= 7) || $tota > 3 && $tota > 7) {
-
-                    ?>                         
-                    <div class="item">
-                        <?php
-                        for ($i = 4; $i < $tota; $i++) {
-                            $val = explode(";", $ressT[$i]);
-
-                            ?>
-                            <div class="col-md-3 bloc-vehicule">
-                                <div class="col-md-12 col-xs-12 profil-vehicule">
-                                    <a href="#rs<?= $val[0]; ?>" data-toggle="tab"><img class="img-responsive" src="../public/img/vehicule/<?= $val[1]; ?>" width="100%" height="100%"></a> 
-                                </div>
-                            </div>
-                            <?php
-                        }
-                    }
-
-                    ?>
                 </div>
-            </div>
-            <a data-slide="prev" href="#carousel3" class="left carousel-control" style="left:-40px;">
-                <span class="icon-prev"></span>
-            </a>
-            <a data-slide="next" href="#carousel3" class="right carousel-control" style="right:-40px;">
-                <span class="icon-next "></span>
-            </a>
-        </div>                    
-    </div>
+                <a data-slide="prev" href="#carousel3" class="left carousel-control" style="left:-40px;">
+                    <span class="icon-prev"></span>
+                </a>
+                <a data-slide="next" href="#carousel3" class="right carousel-control" style="right:-40px;">
+                    <span class="icon-next "></span>
+                </a>
+            </div>                    
+        </div>
+    <?php endif; ?>
+
 </div>
 <div class="band col-md-12"></div>
 <div class="clearfix">&nbsp;</div>
 <div class="col-md-12 cadre-transit">
-    <div class="col-md-3 bloc-vehicule">
-        <div class="col-md-12 col-xs-12 profil-vehicule">
-            <a href="services-all.php"><img class="img-responsive" src="../public/img/vehicule/merco.jpg" width="100%" height="100%"></a> 
+    <?php foreach ($allTransit as $key => $transit): ?>
+        <div class="col-md-3 bloc-vehicule">
+            <div class="col-md-12 col-xs-12 profil-vehicule">
+                <a href="services-all.php?prod/<?= $transit[0]; ?>"><img class="img-responsive" src="../public/img/vehicule/<?= $transit[4]; ?>" width="100%" height="100%"></a> 
+            </div>
+            <div class="col-md-12 col-xs-12">
+                <p><?= $transit[1]; ?></p>
+                <?= $transit[3]; ?> F CFA
+            </div>
+            <div class="col-md-12 col-xs-12">
+                <a href="services-all.php?prod/<?= $transit[0]; ?>" class="btn btn-default btn-sm">Details >></a>
+            </div>
         </div>
-        <div class="col-md-12 col-xs-12">
-            <p>Marque: Mercedez-benz</p>
-            2.000000 F CFA
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <a href="#" class="btn btn-default btn-sm">Details >></a>
-        </div>
-    </div>
-    <div class="col-md-3 bloc-vehicule">
-        <div class="col-md-12 col-xs-12 profil-vehicule">
-            <a href="#"><img class="img-responsive" src="../public/img/vehicule/lexus.jpg" width="100%" height="100%"></a> 
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <p>Marque: Lexus</p>
-            2.000000 F CFA
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <a href="#" class="btn btn-default btn-sm">Details >></a>
-        </div>
-    </div>
-    <div class="col-md-3 bloc-vehicule">
-        <div class="col-md-12 col-xs-12 profil-vehicule">
-            <a href="#"><img class="img-responsive" src="../public/img/vehicule/honda.jpg" width="100%" height="100%"></a> 
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <p>Marque: honda</p>
-            2.000000 F CFA
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <a href="#" class="btn btn-default btn-sm">Details >></a>
-        </div>
-    </div>
-    <div class="col-md-3 bloc-vehicule">
-        <div class="col-md-12 col-xs-12 profil-vehicule">
-            <a href="#"><img class="img-responsive" src="../public/img/vehicule/bmw.jpg" width="100%" height="100%"></a> 
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <p>Marque: BMW</p>
-            2.000000 F CFA
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <a href="#" class="btn btn-default btn-sm">Details >></a>
-        </div>
-    </div>
+    <?php endforeach; ?>
+    <div class="clearfix">&nbsp;</div>
 </div>
-
-<div class="clearfix">&nbsp;</div>
-
-<div class="col-md-12 cadre-transit">
-    <div class="col-md-3 bloc-vehicule">
-        <div class="col-md-12 col-xs-12 profil-vehicule">
-            <a href="services-all.php"><img class="img-responsive" src="../public/img/vehicule/merco.jpg" width="100%" height="100%"></a> 
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <p>Marque: Mercedez-benz</p>
-            2.000000 F CFA
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <a href="#" class="btn btn-default btn-sm">Details >></a>
-        </div>
-    </div>
-    <div class="col-md-3 bloc-vehicule">
-        <div class="col-md-12 col-xs-12 profil-vehicule">
-            <a href="#"><img class="img-responsive" src="../public/img/vehicule/lexus.jpg" width="100%" height="100%"></a> 
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <p>Marque: Lexus</p>
-            2.000000 F CFA
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <a href="#" class="btn btn-default btn-sm">Details >></a>
-        </div>
-    </div>
-    <div class="col-md-3 bloc-vehicule">
-        <div class="col-md-12 col-xs-12 profil-vehicule">
-            <a href="#"><img class="img-responsive" src="../public/img/vehicule/honda.jpg" width="100%" height="100%"></a> 
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <p>Marque: honda</p>
-            2.000000 F CFA
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <a href="#" class="btn btn-default btn-sm">Details >></a>
-        </div>
-    </div>
-    <div class="col-md-3 bloc-vehicule">
-        <div class="col-md-12 col-xs-12 profil-vehicule">
-            <a href="#"><img class="img-responsive" src="../public/img/vehicule/bmw.jpg" width="100%" height="100%"></a> 
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <p>Marque: BMW</p>
-            2.000000 F CFA
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <a href="#" class="btn btn-default btn-sm">Details >></a>
-        </div>
-    </div>
-</div>
-<div class="clearfix">&nbsp;</div>
-<div class="col-md-12 cadre-transit">
-    <div class="col-md-3 bloc-vehicule">
-        <div class="col-md-12 col-xs-12 profil-vehicule">
-            <a href="services-all.php"><img class="img-responsive" src="../public/img/vehicule/merco.jpg" width="100%" height="100%"></a> 
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <p>Marque: Mercedez-benz</p>
-            2.000000 F CFA
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <a href="#" class="btn btn-default btn-sm">Details >></a>
-        </div>
-    </div>
-    <div class="col-md-3 bloc-vehicule">
-        <div class="col-md-12 col-xs-12 profil-vehicule">
-            <a href="#"><img class="img-responsive" src="../public/img/vehicule/lexus.jpg" width="100%" height="100%"></a> 
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <p>Marque: Lexus</p>
-            2.000000 F CFA
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <a href="#" class="btn btn-default btn-sm">Details >></a>
-        </div>
-    </div>
-    <div class="col-md-3 bloc-vehicule">
-        <div class="col-md-12 col-xs-12 profil-vehicule">
-            <a href="#"><img class="img-responsive" src="../public/img/vehicule/honda.jpg" width="100%" height="100%"></a> 
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <p>Marque: honda</p>
-            2.000000 F CFA
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <a href="#" class="btn btn-default btn-sm">Details >></a>
-        </div>
-    </div>
-    <div class="col-md-3 bloc-vehicule">
-        <div class="col-md-12 col-xs-12 profil-vehicule">
-            <a href="#"><img class="img-responsive" src="../public/img/vehicule/bmw.jpg" width="100%" height="100%"></a> 
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <p>Marque: BMW</p>
-            2.000000 F CFA
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <a href="#" class="btn btn-default btn-sm">Details >></a>
-        </div>
-    </div>
-</div>
-<div class="clearfix">&nbsp;</div>
-<div class="col-md-12 cadre-transit">
-    <div class="col-md-3 bloc-vehicule">
-        <div class="col-md-12 col-xs-12 profil-vehicule">
-            <a href="services-all.php"><img class="img-responsive" src="../public/img/vehicule/merco.jpg" width="100%" height="100%"></a> 
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <p>Marque: Mercedez-benz</p>
-            2.000000 F CFA
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <a href="#" class="btn btn-default btn-sm">Details >></a>
-        </div>
-    </div>
-    <div class="col-md-3 bloc-vehicule">
-        <div class="col-md-12 col-xs-12 profil-vehicule">
-            <a href="#"><img class="img-responsive" src="../public/img/vehicule/lexus.jpg" width="100%" height="100%"></a> 
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <p>Marque: Lexus</p>
-            2.000000 F CFA
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <a href="#" class="btn btn-default btn-sm">Details >></a>
-        </div>
-    </div>
-    <div class="col-md-3 bloc-vehicule">
-        <div class="col-md-12 col-xs-12 profil-vehicule">
-            <a href="#"><img class="img-responsive" src="../public/img/vehicule/honda.jpg" width="100%" height="100%"></a> 
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <p>Marque: honda</p>
-            2.000000 F CFA
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <a href="#" class="btn btn-default btn-sm">Details >></a>
-        </div>
-    </div>
-    <div class="col-md-3 bloc-vehicule">
-        <div class="col-md-12 col-xs-12 profil-vehicule">
-            <a href="#"><img class="img-responsive" src="../public/img/vehicule/bmw.jpg" width="100%" height="100%"></a> 
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <p>Marque: BMW</p>
-            2.000000 F CFA
-        </div>
-        <div class="col-md-12 col-xs-12">
-            <a href="#" class="btn btn-default btn-sm">Details >></a>
-        </div>
-    </div>
-</div>
-
-
 <?php include './footer.php'; ?>

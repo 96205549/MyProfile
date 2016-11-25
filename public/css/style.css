@@ -216,15 +216,25 @@ p {
     color:  #761c19;
 }
 .cadre-transit{
-    height: 280px;
+   /* height: 280px;*/
     margin-top: 3px;
     background-color: #fff;
 }
-.bloc-vehicule{
-    height: auto;
+.blo-vehicule{
+    /*height: auto;*/
+    height: 200px;
     padding: 3px;
+    /*margin-top: px;*/
     overflow: hidden;
-    background-color: #e5e5e5;
+   /* background-color: #e5e5e5;*/
+}
+.bloc-vehicule{
+    /*height: auto;*/
+    height: 280px;
+    padding: 3px;
+    margin-top: 6px;
+    overflow: hidden;
+   /* background-color: #e5e5e5;*/
 }
 .profil-vehicule{
     background-color: #fff;
@@ -247,6 +257,7 @@ p {
 }
 .band{
     border-width: 1px;
+    margin-top: 18px;
     border: solid 1px #0086b3;
     border-bottom-color: slategray;
     margin-bottom: 15px;

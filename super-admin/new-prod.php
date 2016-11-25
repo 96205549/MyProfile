@@ -104,7 +104,7 @@ if ($index == "new-prod.php") {
                                                     <span class="col-md-12 clearfix">&nbsp;</span>
                                                     <span class="col-md-12">
                                                         <select name="categorie" class="form-control" >
-                                                            <?php foreach ($data2 as $key => $value) { ?>
+                                                            <?php foreach ($dataB as $key => $value) { ?>
                                                                 <option value="<?= $value[0]; ?>"><?= $value[1]; ?></option>
                                                             <?php } ?>
                                                         </select>

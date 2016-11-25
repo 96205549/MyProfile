@@ -74,6 +74,25 @@ if (isset($_POST['submitPresta'])) {
 }
 
 /*
+ * ajout d'un  business
+ */
+
+if (isset($_POST['submitBusin'])) {
+    $busi = $_POST['busi'];
+    $date = time();
+    //$iduser = 1;
+    //echo '<br>addresse=>'.$addr."<br>nom=>".$nomets."<br>slog=>".$slogan."<br>bp=>".$bp."<br>cont=>".$cont."<br>date=>".$date."<br>logo=>".$logo."<br>";
+    $inside = $db->query("INSERT INTO `business`(`libelle_business`,`id_users`,`date`) VALUES ('$busi','$id','$date')");
+    //print_r($inside);
+    if ($inside == true) {
+        echo "oui enregistrement effectuer avec succès";
+        header('Location: admin.php?tab=bus');
+    } else {
+        echo "echec d'enregistrement pour retourné à la page précédente veuillez cliquer ici.. <a href='admin.php?tab=bus'>retour</a>";
+    }
+}
+
+/*
  * ajout du cv
  */
 
@@ -263,7 +282,14 @@ if (isset($_GET['code'])) {
         } else {
             echo "echec de suppression";
         }
-    } elseif ($syst == "blog") {
+    }elseif ($syst == "busi") {
+        $inside = $db->query("delete from business where id='$id'");
+        if ($inside) {
+            header('Location: admin.php?tab=bus');
+        } else {
+            echo "echec de suppression";
+        }
+    }elseif ($syst == "blog") {
         $inside = $db->query("delete from post where id='$id'");
         if ($inside) {
             header('Location: admin.php?tab=blog');
@@ -291,7 +317,7 @@ if (isset($_POST['submitProduit'])) {
         }
         //die(print_r($file_name));
         if ($idprod == "0") {
-            $inside = $db->query("INSERT INTO `produits`(`libelleProduit`,`brefDetail`,`prix`, `imageProduit`, `idOffre`, `date`) VALUES ('$nomP','$detailP','$prixP','$file_name','$categorieP','$date')");
+            $inside = $db->query("INSERT INTO `produits`(`libelleProduit`,`brefDetail`,`prix`, `imageProduit`, `idBusi`, `date`) VALUES ('$nomP','$detailP','$prixP','$file_name','$categorieP','$date')");
         } else {
 
             $req = "SELECT * FROM produits where id='$idprod' ";
@@ -299,7 +325,7 @@ if (isset($_POST['submitProduit'])) {
             if (empty($file_name)) {
                 $file_name = $prod[4];
             }
-            $inside = $db->prepare("UPDATE produits SET libelleProduit=:libelle, brefDetail=:detail, prix=:prix, imageProduit=:img, idOffre=:categ, date=:date WHERE id=:id");
+            $inside = $db->prepare("UPDATE produits SET libelleProduit=:libelle, brefDetail=:detail, prix=:prix, imageProduit=:img, idBusi=:categ, date=:date WHERE id=:id");
             $inside->execute(array(
                 'libelle' => $nomP,
                 'detail' => $detailP,

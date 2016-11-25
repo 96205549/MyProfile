@@ -61,6 +61,11 @@ if ($index == "admin.php") {
                                         </a>
                                     </li>
                                     <li class="modepaie">
+                                        <a href="#business" data-toggle="tab"  class = "<?= ($tab == "bus") ? "active" : " " ?>"  >
+                                            Nos Business
+                                        </a>
+                                    </li>
+                                    <li class="modepaie">
                                         <a href="#cv" data-toggle="tab">
                                             Mon CV
                                         </a>
@@ -175,6 +180,45 @@ if ($index == "admin.php") {
                                                         <td align='center'><?= $value[0]; ?></td>
                                                         <td><?= $value[1]; ?></td>
                                                         <td align='center'><!--a href="#"><i class="fa fa-pencil text-warning text-center"></i></a>&nbsp;--><a href="controller.php?code=prest/<?= $value[0] ?>"><i class="fa fa-remove text-danger"></i></a></td>
+                                                    </tr>
+                                                <?php endforeach; ?>
+
+                                                <tbody>
+
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </form>
+                                </div> <!-- /.tab-pane -->
+
+                                <div class="tab-pane fade in <?= ($tab == "bus") ? "active" : " " ?>" id="business">
+
+                                    <div class="portlet-header">
+                                        <h3 class="portlet-title">Nos Business </h3>
+                                    </div> <!-- /.heading-block -->
+                                    <form  method="post" action="controller.php" class="form-horizontal">
+                                        <div class="col-md-12">
+                                            <span  data-toggle="collapse" data-target="#demob" style="cursor: alias;"><a href="#">Ajouter un nouveau business</a></span>
+
+                                        </div>
+                                        <div id="demob" class="collapse col-md-12">
+                                            <span class="clearfix">&nbsp;</span>
+                                            <span  class="col-md-8"><input type="text" class=" form-control" name="busi" placeholder="new business.."></span>
+                                            <span  class="col-md-3"><input type="submit" name="submitBusin" class="btn btn-default" value="Ajouter"></span> 
+                                        </div>
+                                        <div class="col-md-12">
+                                            <table class=" col-md-12 table-responsive table-striped table-hover table-bordered" style="margin-top: 20px;">
+                                                <tr style="height: 30px;" class="table-responsive">
+                                                    <td align='center'><b>N°:</b></td>
+                                                    <td > <b>Nom Business</b></td>
+                                                    <td align='center'><b>Action</b></td>
+
+                                                </tr>
+                                                <?php foreach ($dataB as $value): ?>
+                                                    <tr style="height: 40px;">
+                                                        <td align='center'><?= $value[0]; ?></td>
+                                                        <td><?= $value[1]; ?></td>
+                                                        <td align='center'><!--a href="#"><i class="fa fa-pencil text-warning text-center"></i></a>&nbsp;--><a href="controller.php?code=busi/<?= $value[0] ?>"><i class="fa fa-remove text-danger"></i></a></td>
                                                     </tr>
                                                 <?php endforeach; ?>
 

@@ -43,11 +43,11 @@ $postMsg = $db->query("select * from messages");
 /*
  * requête pour les 8 produit propres au transit
  */
-$rprodTr = $db->query("select * from produits where idOffre='9' order by id DESC limit 8");
+$rprodTr = $db->query("select * from produits where idBusi='1' order by id DESC limit 8");
 /*
  * requête pour les 8 produit propres à l'immobilier
  */
-$rprodIm = $db->query("select * from produits where idOffre='8' order by id DESC limit 8");
+$rprodIm = $db->query("select * from produits where idBusi='2' order by id DESC limit 8");
 
 /*
  * transit
@@ -59,6 +59,12 @@ $produitsT = $rprodTr->fetchAll();
  * immobilier
  */
 $produitsI = $rprodIm->fetchAll();
+
+/*
+ * recupération de tous les produits du transit
+ */
+
+$allTransit = $db->query("select * from produits where idBusi='1' order by id DESC")->fetchAll();
 
 $msgs = $postMsg->fetchAll();
 $Cv = $cv->fetchAll();

@@ -4,6 +4,9 @@
 include './admin_requete.php';
 
 $sqlcatego = "SELECT * FROM offres where id='$addProd[5]' order by id desc limit 1";
+$categori = $db->query($sqlcatego)->fetch();
+
+$sqlcatego = "SELECT * FROM business where id='$addProd[5]' order by id desc limit 1";
 $categorie = $db->query($sqlcatego)->fetch();
 /*
  * recuperation des attribut propre au produit

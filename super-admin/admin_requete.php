@@ -61,9 +61,15 @@ $user = "SELECT * FROM users where id='$id' order by id desc limit 1";
  */
 $liste = "SELECT * FROM produits order by id desc";
 
+/*
+ * listes de tous les business
+ */
+$datab = "SELECT * FROM business order by id desc";
+
 
 $data = $db->query($sqlEts);
 $data2 = $db->query($sqlService);
+$dataB = $db->query($datab)->fetchAll();
 $datacv = $db->query($sqlcv)->fetch();
 $slides = $db->query($sli)->fetchAll();
 $Posts = $db->query($post)->fetchAll();
