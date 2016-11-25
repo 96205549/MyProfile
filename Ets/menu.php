@@ -2,7 +2,6 @@
 $page = $_SERVER['REQUEST_URI'];
 $cible = explode("/", $page)[2];
 $cibleTrue = explode("?", $cible)[0];
-
 ?>
 <nav class="navbar navbar nav-color">
     <div class="container-fluid">
@@ -18,31 +17,15 @@ $cibleTrue = explode("?", $cible)[0];
                     <i class="fa fa-caret-down"></i>
                 </a>
                 <ul class="dropdown-menu sous-menu" role="menu">
+                   
+                    <?php foreach ($allBusiness as $key => $biz) : ?>
                     <li>
-                        <a href="prestation.php?nos-service-informatiques">
-                            <i class="fa fa-caret-right"></i>
-                            &nbsp;&nbsp;Informatique
-                        </a>
-                    </li>
-                    <li>
-                        <a href="" target="_blank">
+                        <a href="business.php?biz/<?= $biz[0] ?>">
                             <i class="fa fa-caret-right"></i> 
-                            &nbsp;M&eacute;canique-auto
+                            &nbsp;<?= $biz[1] ?>
                         </a>
-                    </li>    
-                    <li>
-                        <a href="business.php" target="_blank">
-                            <i class="fa fa-caret-right"></i> 
-                            &nbsp;V&eacute;hicule d&apos;occasion
-                        </a>
-                    </li>    
-                    <li>
-                        <a href="business.php" target="_blank">
-                            <i class="fa fa-caret-right"></i> 
-                            &nbsp;Immobilier
-                        </a>
-                    </li>    
-
+                    </li> 
+                    <?php endforeach; ?>
                 </ul></li>
             <li class="nav-color-li <?= ($cibleTrue == "blog.php") ? "active" : " " ?>"><a href="blog.php?notre-blog">Blog</a></li> 
             <li class="nav-color-li <?= ($cibleTrue == "contact.php") ? "active" : " " ?>"><a href="contact.php?contactez-de-la-banlieue">Contact</a></li> 

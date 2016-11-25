@@ -2,7 +2,7 @@
 <div class="clearfix">&nbsp;</div>
 <div class="row col-md-12 col-xs-12">
     <div class="col-xs-12 col-md-12 col-sm-12 transit">
-        <span class="service"><b>SERVICE TRANSIT</b></span>
+        <span class="service"><b>Business</b></span>
         <div class="col-md-12 promotion-vehicule">
             Promotion des v&eacute;hicules d&apos;occasion 
         </div>
@@ -105,143 +105,27 @@
 </div>
 <div class="clearfix">&nbsp;</div>
 <div class="clearfix">&nbsp;</div>
-<div class="clearfix">&nbsp;</div>
-<div class="row col-md-12">
-
-    <div class="col-xs-12 col-md-12 col-sm-12 transit">
-        <span class="service"><b>SERVICE IMMOBILIER</b></span>
-        <div class="col-md-12 promotion-vehicule">
-            Publicit&eacute; des locations d'appartement 
-        </div>
-        <div class="col-md-12 cadre-transit">
-
-            <div class="carousel slide"  id="carousel3">
-                <div class="carousel-inner">
-                    <div class="item active">
-
-                        <div class="col-md-3 bloc-vehicule">
-                            <div class="col-md-12 col-xs-12 profil-vehicule">
-                                <a href="#"> <img class="img-responsive" src="../public/img/immobilier/b.jpg" width="100%" height="100%"></a> 
-                            </div>
-                            <div class="col-md-12 col-xs-12">
-                                <p>Villa complet</p>
-                                2.000000 F CFA
-                            </div>
-                            <div class="col-md-12 col-xs-12">
-                                <a href class="btn btn-default btn-sm">Details >></a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 bloc-vehicule">
-                            <div class="col-md-12 col-xs-12 profil-vehicule">
-                                <a href="#"><img class="img-responsive" src="../public/img/immobilier/c.jpg" width="100%" height="100%"></a> 
-                            </div>
-                            <div class="col-md-12 col-xs-12">
-                                <p>Villa complet</p>
-                                2.000000 F CFA
-                            </div>
-                            <div class="col-md-12 col-xs-12">
-                                <a href="#" class="btn btn-default btn-sm">Details >></a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 bloc-vehicule">
-                            <div class="col-md-12 col-xs-12 profil-vehicule">
-                                <a href="#"> <img class="img-responsive" src="../public/img/immobilier/d.jpg" width="100%" height="100%"></a>
-                            </div>
-                            <div class="col-md-12 col-xs-12">
-                                <p>Villa complet</p>
-                                2.000000 F CFA
-                            </div>
-                            <div class="col-md-12 col-xs-12">
-                                <a href="#" class="btn btn-default btn-sm">Details >></a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 bloc-vehicule">
-                            <div class="col-md-12 col-xs-12 profil-vehicule">
-                                <a href="#"><img class="img-responsive" src="../public/img/immobilier/e.jpg" width="100%" height="100%"></a> 
-                            </div>
-                            <div class="col-md-12 col-xs-12">
-                                <p>Villa complet</p>
-                                2.000000 F CFA
-                            </div>
-                            <div class="col-md-12 col-xs-12">
-                                <a href="#" class="btn btn-default btn-sm">Details >></a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="col-md-3 bloc-vehicule">
-                            <div class="col-md-12 col-xs-12 profil-vehicule">
-                                <a href="#"><img class="img-responsive" src="../public/img/immobilier/e.jpg" width="100%" height="100%"></a> 
-                            </div>
-                            <div class="col-md-12 col-xs-12">
-                                <p>Villa complet</p>
-                                2.000000 F CFA
-                            </div>
-                            <div class="col-md-12 col-xs-12">
-                                <a href="#" class="btn btn-default btn-sm">Details >></a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 bloc-vehicule">
-                            <div class="col-md-12 col-xs-12 profil-vehicule">
-                                <a href="#"><img class="img-responsive" src="../public/img/immobilier/e.jpg" width="100%" height="100%"></a> 
-                            </div>
-                            <div class="col-md-12 col-xs-12">
-                                <p>Villa complet</p>
-                                2.000000 F CFA
-                            </div>
-                            <div class="col-md-12 col-xs-12">
-                                <a href="#" class="btn btn-default btn-sm">Details >></a>
-                            </div>
-                        </div>
-                        <div class="col-md-3 bloc-vehicule">
-                            <div class="col-md-12 col-xs-12 profil-vehicule">
-                                <a href="#"><img class="img-responsive" src="../public/img/immobilier/e.jpg" width="100%" height="100%"></a> 
-                            </div>
-                            <div class="col-md-12 col-xs-12">
-                                <p>Villa complet</p>
-                                2.000000 F CFA
-                            </div>
-                            <div class="col-md-12 col-xs-12">
-                                <a href="#" class="btn btn-default btn-sm">Details >></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a data-slide="prev" href="#carousel3" class="left carousel-control" style="left:-40px;">
-                    <span class="icon-prev"></span>
-                </a>
-                <a data-slide="next" href="#carousel3" class="right carousel-control" style="right:-40px;">
-                    <span class="icon-next "></span>
-                </a>
-            </div>
-        </div>
-    </div>
-
-</div>
-<div class="clearfix">&nbsp;</div>
 
 <div class="clearfix">&nbsp;</div>
 <div class="row container">
     <div class="col-md-12 row footer-bloc">
         <div class="col-md-3 info-foo">
             <p>
-            <h4><strong>A propos</strong></h4>
-            <i class="fa fa-caret-right"></i> Camera video surveillance<br/><br/>
-            <i class="fa fa-caret-right"></i> Maintenance et réseaux informatique<br/><br/>
+            <h4><strong>Nos business</strong></h4>
+            <?php foreach ($allBusiness as $biz) { ?>
+                <a href="business.php?biz/<?= $biz[0] ?>">
+                    <i class="fa fa-caret-right"></i> 
+                    &nbsp;<?= $biz[1] ?>
+                </a><br/><br/>
+            <?php } ?>
             </p>
         </div>
         <div class="col-md-3 info-foo">
             <p>
             <h4><strong>Nos services</strong></h4>
-            <?php foreach ($services as $service) {
-
-                ?>
+            <?php foreach ($services as $service) { ?>
                 <i class="fa fa-caret-right"></i>&nbsp; <?= $service['1']; ?><br/><br/>
-<?php } ?>
-            <!--i class="fa fa-caret-right"></i> Camera video surveillance<br/><br/>
-            <i class="fa fa-caret-right"></i> Maintenance et réseaux informatique<br/><br/>
-            <i class="fa fa-caret-right"></i> Montage des antennes parabolique<br/><br/>
-            <i class="fa fa-caret-right"></i> Programmation informatique (androïd et web)<br/><br/-->
+            <?php } ?>
             </p>
         </div>
         <div class="col-md-3 info-foo">
