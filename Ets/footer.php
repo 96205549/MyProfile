@@ -7,7 +7,7 @@
             Promotion des v&eacute;hicules d&apos;occasion 
         </div>
         <?php $countTr = sizeof($produitsT); ?>
-        <div class="col-md-12 cadre-transit">
+        <div class="col-md-12 col-xs-12 cadre-transit">
             <div class="carousel slide"  id="carousel2">
                 <div class="carousel-inner">
                     <div class="item active">
@@ -36,7 +36,7 @@
                                         <?= $val[2]; ?>
                                     </div>
                                     <div class="col-md-12 col-xs-12">
-                                        <a href="#" class="btn btn-default btn-sm">Details >></a>
+                                        <a href="services-all.php?prod/<?= $val[0]; ?>" class="btn btn-default btn-sm">Details >></a>
                                     </div>
                                 </div>
 
@@ -56,7 +56,7 @@
                                         <?= $val[2]; ?>
                                     </div>
                                     <div class="col-md-12 col-xs-12">
-                                        <a href="#" class="btn btn-default btn-sm">Details >></a>
+                                        <a href="services-all.php?prod/<?= $val[0]; ?>" class="btn btn-default btn-sm">Details >></a>
                                     </div>
                                 </div>
                             <?php }
@@ -82,7 +82,7 @@
                                         <?= $val[2]; ?>
                                     </div>
                                     <div class="col-md-12 col-xs-12">
-                                        <a href="#" class="btn btn-default btn-sm">Details >></a>
+                                        <a href="services-all.php?prod/<?= $val[0]; ?>" class="btn btn-default btn-sm">Details >></a>
                                     </div>
                                 </div>
                                 <?php
@@ -100,13 +100,12 @@
                 </a>
             </div>                    
 
+            <div class="clearfix">&nbsp;</div>
         </div>
     </div>
 </div>
 <div class="clearfix">&nbsp;</div>
-<div class="clearfix">&nbsp;</div>
-
-<div class="clearfix">&nbsp;</div>
+<!--div class="clearfix">&nbsp;</div-->
 <div class="row container">
     <div class="col-md-12 row footer-bloc">
         <div class="col-md-3 info-foo">
@@ -150,9 +149,9 @@
 </div>
 </div>
 </div>
-
 </body>
 <script src="../public/vendor/jquery/dist/jquery.min.js"></script>
+<script src="../public/js/jquery.min.js"></script>
 <script src="../public/vendor/bootstrap/dist/js/bootstrap.min.js"></script>
 <!--script src="../public/js/postmsg.js"></script-->                
 <script type="text/javascript" src="../public/popup/js/jquery.slimscroll.min.js"></script>          
@@ -163,7 +162,7 @@
 <!--script src="../public/js/zoom/js/jquery.js"></script-->
 <script src="../public/js/zoom/js/jquery.bridget.js"></script>
 <script src="../public/js/zoom/js/jquery.mousewheel.js"></script>
-<script src="../public/js/zoom/js/jquery.event.drag.js"></script>
+<!--script src="../public/js/zoom/js/jquery.event.drag.js"></script-->
 <script src="../public/js/zoom/js/gajs.js"></script>
 <script src="../public/js/zoom/js/PreventGhostClick.js"></script>
 <script src="../public/js/zoom/js/mag-analytics.js"></script>

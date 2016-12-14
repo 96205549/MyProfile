@@ -13,6 +13,7 @@ $reqAttrib = $db->query("SELECT * FROM attributs where idProduit='$id'")->fetchA
 $ress = $db->query("select * from ressources where idProduit='$reqProd[0]' order by id DESC limit 8")->fetchAll();
 
 ?>
+<div class="clearfix">&nbsp;</div>
 <div class="col-md-12 col-xs-12 col-lg-12">
     <div class="col-md-7 produit-profile">
         <div class="col col-md-12" style="height:400px; overflow: hidden;">
@@ -66,8 +67,9 @@ $ress = $db->query("select * from ressources where idProduit='$reqProd[0]' order
 
         </div>
     </div>
+
     <div class="col-md-4 col-md-offset-1 detail-produit">
-        <span class="bar-detail-produit row container col-md-12">D&eacute;tails du produit</span>
+        <div class="bar-detail-produit row container col-md-12">D&eacute;tails du produit</div>
         <div>
             <span class="col-md-12">&nbsp;</span>
             <p>
@@ -160,6 +162,7 @@ $ress = $db->query("select * from ressources where idProduit='$reqProd[0]' order
     <?php endif; ?>
 
 </div>
+<div class="clearfix">&nbsp;</div>
 <div class="band col-md-12"></div>
 <div class="clearfix">&nbsp;</div>
 <div class="col-md-12 cadre-transit">
@@ -179,4 +182,5 @@ $ress = $db->query("select * from ressources where idProduit='$reqProd[0]' order
     <?php endforeach; ?>
     <div class="clearfix">&nbsp;</div>
 </div>
+<div class="clearfix">&nbsp;</div>
 <?php include './footer.php'; ?>

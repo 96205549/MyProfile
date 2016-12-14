@@ -24,8 +24,6 @@ and open the template in the editor.
         <link rel="stylesheet" href="../public/css/mag.css">
         <link rel="stylesheet" href="../public/css/index.css">
 
-
-
     </head>
     <body class="body"> 
         <div class="container">
