@@ -116,7 +116,7 @@
             </div>
             <div class="col-md-4">
                 <div class="col-md-12 prestation">
-                    <img src="../public/img/logoNCI.png" class="img-responsive" width="100%" height="100%">
+                    <img src="../public/img/img-prestation/logArron.png" class="img-responsive" width="100%" height="100%">
                 </div>
                 <div class="col-md-12">
                     <span class="col-md-12" style="margin-top: 20px;"><a href="">Service de nettoyage pour un environnement sain</a></span><br>
