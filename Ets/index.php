@@ -3,7 +3,7 @@
     <div class="col-md-12 left_bloc">
         <div class="slide-bloc col-md-12">
             <!--code du slide-->
-            <div id="myCarousel" class="carousel slide" data-ride="carousel" style="height: 380px; overflow: hidden">
+            <div id="myCarousel" class="carousel slide" data-ride="carousel" style="max-height: 380px; overflow: hidden">
                 <!-- Indicators -->
                 <ol class="carousel-indicators">
                     <li data-target="#myCarousel" data-slide-to="0" class="<?= (sizeof($slid[0]) > 0) ? "active" : " " ?>"></li>
@@ -75,7 +75,7 @@
             </div>
             <div class="col-md-4">
                 <div class="col-md-12 prestation">
-                    <img src="../public/img/res3.jpg" class="img-responsive" width="100%" height="100%">
+                    <img src="../public/img/res3.png" class="img-responsive" width="100%" height="100%">
                 </div>
                 <div class="col-md-12">
                     <span class="col-md-12" style="margin-top: 20px;"><a href="">Ingenerie en maintenance informatique et réseaux</a></span><br>
@@ -87,7 +87,7 @@
             </div>
             <div class="col-md-4">
                 <div class="col-md-12 prestation">
-                    <img src="../public/img/dev.jpg" class="img-responsive" width="100%" height="100%">
+                    <img src="../public/img/dev.png" class="img-responsive" width="100%" height="100%">
                 </div>
                 <div class="col-md-12">
                     <span class="col-md-12" style="margin-top: 20px;"><a href="">Ing&eacute;nerie en d&eacuteveloppement logiciel</a></span><br>
